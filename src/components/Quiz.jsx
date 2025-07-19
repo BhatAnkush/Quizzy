@@ -4,6 +4,7 @@ import QuizQuestion from "./QuizQuestion";
 import QuizTimer from "./QuizTimer";
 import ProgressBar from "./ProgressBar";
 import QuizResults from "./QuizResults";
+import { Images } from "../assets";
 import "./Quiz.css";
 
 const Quiz = ({
@@ -138,9 +139,13 @@ const Quiz = ({
     return (
       <div className="quiz-container">
         <div className="quiz-welcome">
-          <h1 className="quiz-title">
+          <div className="quiz-branding">
+            <img className="quiz-logo" src={Images.logo} alt="Quizzy Spark Logo" />
+            <h1 className="quiz-brand-title">Quizzy Spark</h1>
+          </div>
+          <h2 className="quiz-title">
             {questionsSource === "custom" ? "Custom Quiz" : "Google Cloud Associate Quiz"}
-          </h1>
+          </h2>
           <div className="quiz-info">
             <p>This quiz contains {questionCount} multiple-choice questions.</p>
             <p>You have 60 minutes to complete the quiz.</p>
@@ -181,20 +186,30 @@ const Quiz = ({
   const currentQuestion = questions[currentQuestionIndex];
   const answeredCount = Object.keys(answers).length;
   const progress = (answeredCount / questions.length) * 100;
+  const isLastQuestion = currentQuestionIndex === questions.length - 1;
 
   return (
     <div className="quiz-container">
       <div className="quiz-header">
+        <div className="quiz-header-branding">
+          <img className="quiz-header-logo" src={Images.logo} alt="Quizzy Spark Logo" />
+          <span className="quiz-header-brand">Quizzy Spark</span>
+        </div>
         <QuizTimer
           timeLeft={timeLeft}
           setTimeLeft={setTimeLeft}
           onTimeUp={handleTimeUp}
         />
-        <ProgressBar
-          progress={progress}
-          current={answeredCount}
-          total={questions.length}
-        />
+        <div className="progress-submit-container">
+          <ProgressBar
+            progress={progress}
+            current={answeredCount}
+            total={questions.length}
+          />
+          <button className="submit-button-header" onClick={submitQuiz}>
+            Submit Quiz
+          </button>
+        </div>
       </div>
 
       <div className="quiz-content">
@@ -217,13 +232,22 @@ const Quiz = ({
             Previous
           </button>
 
-          <button
-            className="nav-button"
-            onClick={() => navigateToQuestion(currentQuestionIndex + 1)}
-            disabled={currentQuestionIndex === questions.length - 1}
-          >
-            Next
-          </button>
+          {isLastQuestion ? (
+            <button
+              className="nav-button submit-nav-button"
+              onClick={submitQuiz}
+            >
+              Submit
+            </button>
+          ) : (
+            <button
+              className="nav-button"
+              onClick={() => navigateToQuestion(currentQuestionIndex + 1)}
+              disabled={currentQuestionIndex === questions.length - 1}
+            >
+              Next
+            </button>
+          )}
         </div>
 
         <div className="question-grid">
@@ -240,12 +264,6 @@ const Quiz = ({
               {index + 1}
             </button>
           ))}
-        </div>
-
-        <div className="quiz-actions">
-          <button className="submit-button" onClick={submitQuiz}>
-            Submit Quiz
-          </button>
         </div>
       </div>
     </div>

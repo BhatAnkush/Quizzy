@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Images } from "../assets";
 import "./QuizResults.css";
 
 const QuizResults = ({ results, onRestart, onBack, isCustomQuiz = false }) => {
@@ -15,6 +16,10 @@ const QuizResults = ({ results, onRestart, onBack, isCustomQuiz = false }) => {
   return (
     <div className="quiz-results">
       <div className="results-header">
+        <div className="results-branding">
+          <img className="results-logo" src={Images.logo} alt="Quizzy Spark Logo" />
+          <span className="results-brand-title">Quizzy Spark</span>
+        </div>
         <h1 className="results-title">Quiz Results</h1>
         <div className={`result-status ${passed ? "passed" : "failed"}`}>
           {passed ? "PASSED" : "FAILED"}

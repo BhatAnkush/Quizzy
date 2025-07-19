@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Images } from "../assets";
 import "./FileUpload.css";
 
 const FileUpload = ({ onQuestionsUploaded, onBackToDefault }) => {
@@ -166,6 +167,10 @@ const FileUpload = ({ onQuestionsUploaded, onBackToDefault }) => {
   return (
     <div className="file-upload-container">
       <div className="upload-header">
+        <div className="upload-branding">
+          <img className="upload-logo" src={Images.logo} alt="Quizzy Spark Logo" />
+          <span className="upload-brand-title">Quizzy Spark</span>
+        </div>
         <h1 className="upload-title">Upload Custom Quiz Questions</h1>
         <p className="upload-description">
           Upload your own quiz questions in JSON format to create a custom quiz

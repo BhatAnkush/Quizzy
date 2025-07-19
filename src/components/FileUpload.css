@@ -10,9 +10,31 @@
   margin-bottom: 40px;
 }
 
-.upload-title {
-  font-size: 2.5rem;
+.upload-branding {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.upload-logo {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.upload-brand-title {
+  font-size: 2.2rem;
   font-weight: 700;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.upload-title {
+  font-size: 2rem;
+  font-weight: 600;
   color: white;
   margin-bottom: 15px;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
