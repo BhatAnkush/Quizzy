@@ -3,7 +3,7 @@ import Quiz from "./Quiz";
 import FileUpload from "./FileUpload";
 import { getRandomQuestions } from "../data/questions";
 import "./QuizApp.css";
-
+import { Images } from "../assets";
 const QuizApp = () => {
   const [currentMode, setCurrentMode] = useState("menu"); // menu, default-quiz, custom-quiz, upload
   const [customQuestions, setCustomQuestions] = useState([]);
@@ -58,6 +58,7 @@ const QuizApp = () => {
     <div className="quiz-app-container">
       <div className="main-menu">
         <div className="menu-header">
+          <img className="logo gradient-border" src={Images.logo} alt="Quiz App Logo" />
           <h1 className="app-title">Quiz Application</h1>
           <p className="app-subtitle">
             Test your knowledge with our built-in questions or upload your own

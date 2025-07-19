@@ -16,7 +16,7 @@
 .menu-header {
   margin-bottom: 50px;
 }
-
+/* 
 .app-title {
   font-size: 3.5rem;
   font-weight: 700;
@@ -34,7 +34,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-}
+} */
 
 .app-subtitle {
   font-size: 1.2rem;
@@ -189,10 +189,10 @@
   .quiz-app-container {
     padding: 15px;
   }
-
+/* 
   .app-title {
     font-size: 2.5rem;
-  }
+  } */
 
   .app-subtitle {
     font-size: 1rem;
@@ -233,10 +233,10 @@
 }
 
 @media (max-width: 480px) {
-  .app-title {
+  /* .app-title {
     font-size: 2rem;
     line-height: 1.2;
-  }
+  } */
 
   .menu-header {
     margin-bottom: 30px;
@@ -330,5 +330,157 @@
 
   .option-button:hover {
     transform: none;
+  }
+}
+/* Logo styling for Quiz App */
+.logo {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px auto;
+  display: block;
+  border-radius: 50%;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  background: white;
+  padding: 10px;
+  object-fit: contain;
+}
+
+/* Dark theme support */
+[data-theme="dark"] .logo {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Hover effect */
+.logo:hover {
+  transform: scale(1.05) rotate(5deg);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* Animation on page load */
+.logo {
+  animation: logoFadeIn 0.8s ease forwards;
+  opacity: 0;
+  transform: translateY(-20px) scale(0.8);
+}
+
+@keyframes logoFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .logo {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .logo {
+    border: 2px solid var(--text-primary);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .logo {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .logo:hover {
+    transform: none;
+  }
+}
+
+/* Alternative rectangular logo styling */
+.logo.rectangular {
+  border-radius: 15px;
+  width: 100px;
+  height: 60px;
+}
+
+/* Alternative square logo styling */
+.logo.square {
+  border-radius: 15px;
+  width: 70px;
+  height: 70px;
+}
+
+/* Logo with gradient border */
+.logo.gradient-border {
+  border: 3px solid transparent;
+  background: linear-gradient(white, white) padding-box,
+              linear-gradient(135deg, #667eea 0%, #764ba2 100%) border-box;
+}
+
+[data-theme="dark"] .logo.gradient-border {
+  background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)) padding-box,
+              linear-gradient(135deg, #81c784 0%, #66bb6a 100%) border-box;
+}
+/* Fixed app title styling */
+.app-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Light mode - solid dark color for better readability */
+.app-title {
+  color: #2c3e50; /* Dark blue-gray for excellent contrast */
+}
+
+/* Dark mode - keep the gradient effect */
+[data-theme="dark"] .app-title {
+  background: linear-gradient(135deg, #81c784 0%, #66bb6a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent; /* Fallback for browsers that don't support background-clip */
+}
+
+/* Alternative: If you want gradient in both themes */
+.app-title.gradient-both {
+  background: linear-gradient(135deg, #1565c0 0%, #0d47a1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+[data-theme="dark"] .app-title.gradient-both {
+  background: linear-gradient(135deg, #81c784 0%, #66bb6a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Responsive sizing */
+@media (max-width: 768px) {
+  .app-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-title {
+    font-size: 2rem;
+    line-height: 1.2;
   }
 }
