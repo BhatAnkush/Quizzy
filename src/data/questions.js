@@ -2657,9 +2657,9 @@ export const quizQuestions = [
       "Ask your customers to retry access to your service with exponential backoff to mitigate any potential problems after the new revision is deployed.",
       "Gradually roll out the new revision and split customer traffic between the revisions to allow rollback in case a problem occurs.",
       "Send all customer traffic to the new revision, and roll back to a previous revision if you witness any problems in production.",
-      "Deploy your application to a second Cloud Run service, and ask your customers to use the second Cloud Run service. "
+      "Deploy your application to a second Cloud Run service, and ask your customers to use the second Cloud Run service."
     ],
-    "correctAnswer": 3
+    "correctAnswer": 1
   },
   {
     "id": 256,
@@ -2668,9 +2668,9 @@ export const quizQuestions = [
       "Instruct the external consultant to use the gcloud compute ssh command line tool by using Identity-Aware Proxy to access the instance.",
       "Instruct the external consultant to use the gcloud compute ssh command line tool by using the public IP address of the instance to access it.",
       "Instruct the external consultant to generate an SSH key pair, and request the public key from the consultant. Add the public key to the instance yourself, and have the consultant access the instance through SSH with their private key.",
-      "Instruct the external consultant to generate an SSH key pair, and request the private key from the consultant. Add the private key to the instance yourself, and have the consultant access the instance through SSH with their public key. "
+      "Instruct the external consultant to generate an SSH key pair, and request the private key from the consultant. Add the private key to the instance yourself, and have the consultant access the instance through SSH with their public key."
     ],
-    "correctAnswer": 3
+    "correctAnswer": 0
   },
   {
     "id": 257,
@@ -2679,9 +2679,9 @@ export const quizQuestions = [
       "Create a log sink to forward Cloud Audit Logs filtered for firewalls and compute instances to Cloud Storage. Use BigQuery to periodically analyze log events in the storage bucket.",
       "Use Cloud Logging filters to create log-based metrics for firewall and instance actions. Monitor the changes and set up reasonable alerts.",
       "Install Kibana on a compute instance. Create a log sink to forward Cloud Audit Logs filtered for firewalls and compute instances to Pub/Sub. Target the Pub/Sub topic to push messages to the Kibana instance. Analyze the logs on Kibana in real time.",
-      "Turn on Google Cloud firewall rules logging, and set up alerts for any insert, update, or delete events. "
+      "Turn on Google Cloud firewall rules logging, and set up alerts for any insert, update, or delete events."
     ],
-    "correctAnswer": 2
+    "correctAnswer": 1
   },
   {
     "id": 258,
@@ -2690,7 +2690,7 @@ export const quizQuestions = [
       "Grant \"project owner\" for web-applications appropriate roles to crm-databases.",
       "Grant \"project owner\" role to crm-databases and the web-applications project.",
       "Grant \"project owner\" role to crm-databases and roles/bigquery.dataViewer role to web-applications.",
-      "Grant roles/bigquery.dataViewer role to crm-databases and appropriate roles to web-applications. "
+      "Grant roles/bigquery.dataViewer role to crm-databases and appropriate roles to web-applications."
     ],
     "correctAnswer": 3
   },
@@ -2701,9 +2701,9 @@ export const quizQuestions = [
       "Modify the existing subnet range to 172.16.20.0/24.",
       "Create a new Secondary IP Range in the VPC and configure the VMs to use that range.",
       "Create a new VPC network for the VMs. Enable VPC Peering between the VMs'VPC network and the Dataproc cluster VPC network.",
-      "Create a new VPC network for the VMs with a subnet of 172.32.0.0/16. Enable VPC network Peering between the Dataproc VPC network and the VMs VPC network. Configure a custom Route exchange. "
+      "Create a new VPC network for the VMs with a subnet of 172.32.0.0/16. Enable VPC network Peering between the Dataproc VPC network and the VMs VPC network. Configure a custom Route exchange."
     ],
-    "correctAnswer": 3
+    "correctAnswer": 0
   },
   {
     "id": 260,
@@ -2714,7 +2714,7 @@ export const quizQuestions = [
       "Create a multi-region Cloud SQL for PostgreSQL database with optimized indexes.",
       "Create a multi-region BigQuery dataset with optimized tables."
     ],
-    "correctAnswer": 3
+    "correctAnswer": 0
   },
   {
     "id": 261,
@@ -2723,9 +2723,9 @@ export const quizQuestions = [
       "In the Google Cloud console for your organization, select Create role from selection, and choose destination as the startup company's organization.",
       "In the Google Cloud console for the startup company, select Create role from selection and choose source as the startup company's Google Cloud organization.",
       "Use the gcloud iam roles copy command, and provide the Organization ID of the startup company's Google Cloud Organization as the destination.",
-      "Use the gcloud iam roles copy command, and provide the project IDs of all projects in the startup company's organization as the destination. "
+      "Use the gcloud iam roles copy command, and provide the project IDs of all projects in the startup company's organization as the destination."
     ],
-    "correctAnswer": 3
+    "correctAnswer": 2
   },
   {
     "id": 262,
@@ -2734,7 +2734,7 @@ export const quizQuestions = [
       "Create an App Engine standard environment triggered by Cloud Storage bucket events to submit the file URI to the Google Speech-to- TextAPI.",
       "Run a Kubernetes job to scan the bucket regularly for incoming files, and call the Speech-to-Text API for each unprocessed file.",
       "Run a Python script by using a Linux cron job in Compute Engine to scan the bucket regularly for incoming files, and call the Speech-to-Text API for each unprocessed file.",
-      "Create a Cloud Function triggered by Cloud Storage bucket events to submit the file URI to the Google Speech-to-Text API. "
+      "Create a Cloud Function triggered by Cloud Storage bucket events to submit the file URI to the Google Speech-to-Text API."
     ],
     "correctAnswer": 3
   },
@@ -2745,31 +2745,43 @@ export const quizQuestions = [
       "An external HTTP(S) load balancer with a managed SSL certificate to distribute the load and a URL map to target the requests for the static content to the Cloud Storage backend.",
       "An external network load balancer pointing to the backend instances to distribute the load evenly. The web servers will forward the request to the Cloud Storage as needed.",
       "An internal HTTP(S) load balancer together with Identity-Aware Proxy to allow only HTTPS traffic.",
-      "An external HTTP(S) load balancer to distribute the load and a URL map to target the requests for the static content to the Cloud Storage backend. Install the HTTPS certificates on the instance. "
+      "An external HTTP(S) load balancer to distribute the load and a URL map to target the requests for the static content to the Cloud Storage backend. Install the HTTPS certificates on the instance."
     ],
-    "correctAnswer": 3
+    "correctAnswer": 0
   },
   {
     "id": 264,
-    "question": "The core business of your company is to rent out construction equipment at large scale. All the equipment that is being rented out has been equipped with multiple sensors that send event information every few seconds. These signals can vary from engine status, distance traveled, fuel level, and more. Customers are billed based on the consumption monitored by these sensors. You expect high throughput \u2013 up to thousands of events per hour per device \u2013 and need to retrieve consistent data based on the time of the event. Storing and retrieving individual signals should be atomic. What should you do?",
+    "question": "The core business of your company is to rent out construction equipment at large scale. All the equipment that is being rented out has been equipped with multiple sensors that send event information every few seconds. These signals can vary from engine status, distance traveled, fuel level, and more. Customers are billed based on the consumption monitored by these sensors. You expect high throughput – up to thousands of events per hour per device – and need to retrieve consistent data based on the time of the event. Storing and retrieving individual signals should be atomic. What should you do?",
     "options": [
       "Create files in Cloud Storage as data comes in.",
       "Create a file in Filestore per device, and append new data to that file.",
       "Ingest the data into Cloud SQL. Use multiple read replicas to match the throughput.",
-      "Ingest the data into Bigtable. Create a row key based on the event timestamp. "
+      "Ingest the data into Bigtable. Create a row key based on the event timestamp."
     ],
     "correctAnswer": 3
   },
   {
+    "id": 265,
+    "question": "You just installed the Google Cloud CLI on your new corporate laptop. You need to list the existing instances of your company on Google Cloud. What must you do before you run the gcloud compute instances list command? (Choose two.)",
+    "options": [
+      "Run gcloud auth login, enter your login credentials in the dialog window, and paste the received login token to gcloud CLI.",
+      "Create a Google Cloud service account, and download the service account key. Place the key file in a folder on your machine where gcloud CLI can find it.",
+      "Download your Cloud Identity user account key. Place the key file in a folder on your machine where gcloud CLI can find it.",
+      "Run gcloud config set compute/zone $my_zone to set the default zone for gcloud CLI.",
+      "Run gcloud config set project $my_project to set the default project for gcloud CLI."
+    ],
+    "correctAnswer": [0, 4]
+  },
+  {
     "id": 266,
-    "question": "You are planning to migrate your on-premises data to Google Cloud. The data includes: \u2022 200 TB of video files in SAN storage \u2022 Data warehouse data stored on Amazon Redshift \u2022 20 GB of PNG files stored on an S3 bucket You need to load the video files into a Cloud Storage bucket, transfer the data warehouse data into BigQuery, and load the PNG files into a second Cloud Storage bucket. You want to follow Google-recommended practices and avoid writing any code for the migration. What should you do?",
+    "question": "You are planning to migrate your on-premises data to Google Cloud. The data includes: • 200 TB of video files in SAN storage • Data warehouse data stored on Amazon Redshift • 20 GB of PNG files stored on an S3 bucket You need to load the video files into a Cloud Storage bucket, transfer the data warehouse data into BigQuery, and load the PNG files into a second Cloud Storage bucket. You want to follow Google-recommended practices and avoid writing any code for the migration. What should you do?",
     "options": [
       "Use gcloud storage for the video files, Dataflow for the data warehouse data, and Storage Transfer Service for the PNG files.",
       "Use Transfer Appliance for the videos, BigQuery Data Transfer Service for the data warehouse data, and Storage Transfer Service for the PNG files.",
       "Use Storage Transfer Service for the video files, BigQuery Data Transfer Service for the data warehouse data, and Storage Transfer Service for the PNG files.",
-      "Use Cloud Data Fusion for the video files, Dataflow for the data warehouse data, and Storage Transfer Service for the PNG files. "
+      "Use Cloud Data Fusion for the video files, Dataflow for the data warehouse data, and Storage Transfer Service for the PNG files."
     ],
-    "correctAnswer": 3
+    "correctAnswer": 1
   },
   {
     "id": 267,
@@ -2778,9 +2790,9 @@ export const quizQuestions = [
       "Deploy the application on GKE Autopilot.",
       "Deploy the application on Cloud Run.",
       "Deploy the application on GKE Standard.",
-      "Deploy the application on Cloud Functions. "
+      "Deploy the application on Cloud Functions."
     ],
-    "correctAnswer": 3
+    "correctAnswer": 0
   },
   {
     "id": 268,
@@ -2789,20 +2801,20 @@ export const quizQuestions = [
       "Save the incoming votes to Firestore. Use Cloud Scheduler to trigger a Cloud Functions instance to periodically process the votes.",
       "Use a dedicated instance to process the incoming votes. Send the votes directly to this instance.",
       "Save the incoming votes to a JSON file on Cloud Storage. Process the votes in a batch at the end of the day.",
-      "Save the incoming votes to Pub/Sub. Use the Pub/Sub topic to trigger a Cloud Functions instance to process the votes. "
+      "Save the incoming votes to Pub/Sub. Use the Pub/Sub topic to trigger a Cloud Functions instance to process the votes."
     ],
     "correctAnswer": 3
   },
   {
     "id": 269,
-    "question": "You are deploying an application on Google Cloud that requires a relational database for storage. To satisfy your company\u2019s security policies, your application must connect to your database through an encrypted and authenticated connection that requires minimal management and integrates with Identity and Access Management (IAM). What should you do?",
+    "question": "You are deploying an application on Google Cloud that requires a relational database for storage. To satisfy your company’s security policies, your application must connect to your database through an encrypted and authenticated connection that requires minimal management and integrates with Identity and Access Management (IAM). What should you do?",
     "options": [
       "Deploy a Cloud SQL database with the SSL mode set to encrypted only, configure SSL/TLS client certificates, and configure a database user and password.",
       "Deploy a Cloud SQL database with the SSL mode set to encrypted only, configure SSL/TLS client certificates, and configure IAM database authentication.",
       "Deploy a Cloud SQL database and configure IAM database authentication. Access the database through the Cloud SQL Auth Proxy.",
-      "Deploy a Cloud SQL database and configure a database user and password. Access the database through the Cloud SQL Auth Proxy. "
+      "Deploy a Cloud SQL database and configure a database user and password. Access the database through the Cloud SQL Auth Proxy."
     ],
-    "correctAnswer": 3
+    "correctAnswer": 2
   },
   {
     "id": 270,
@@ -2813,11 +2825,11 @@ export const quizQuestions = [
       "Configure a Cloud Router in vpc-a and another Cloud Router in vpc-b.",
       "Configure a Cloud Interconnect connection between vpc-a and vpc-b."
     ],
-    "correctAnswer": 3
+    "correctAnswer": 1
   },
   {
     "id": 271,
-    "question": "Your company is running a critical workload on a single Compute Engine VM instance. Your company's disaster recovery policies require you to back up the entire instance\u2019s disk data every day. The backups must be retained for 7 days. You must configure a backup solution that complies with your company\u2019s security policies and requires minimal setup and configuration. What should you do?",
+    "question": "Your company is running a critical workload on a single Compute Engine VM instance. Your company's disaster recovery policies require you to back up the entire instance’s disk data every day. The backups must be retained for 7 days. You must configure a backup solution that complies with your company’s security policies and requires minimal setup and configuration. What should you do?",
     "options": [
       "Configure the instance to use persistent disk asynchronous replication.",
       "Configure daily scheduled persistent disk snapshots with a retention period of 7 days.",
