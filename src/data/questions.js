@@ -2834,18 +2834,18 @@ export const quizQuestions = [
       "Configure the instance to use persistent disk asynchronous replication.",
       "Configure daily scheduled persistent disk snapshots with a retention period of 7 days.",
       "Configure Cloud Scheduler to trigger a Cloud Function each day that creates a new machine image and deletes machine images that are older than 7 days.",
-      "Configure a bash script using gsutil to run daily through a cron job. Copy the disk\u2019s files to a Cloud Storage bucket with archive storage class and an object lifecycle rule to delete the objects after 7 days. "
+      "Configure a bash script using gsutil to run daily through a cron job. Copy the disk’s files to a Cloud Storage bucket with archive storage class and an object lifecycle rule to delete the objects after 7 days."
     ],
-    "correctAnswer": 3
+    "correctAnswer": 1
   },
   {
     "id": 272,
-    "question": "Your company requires that Google Cloud products are created with a specific configuration to comply with your company\u2019s security policies. You need to implement a mechanism that will allow software engineers at your company to deploy and update Google Cloud products in a preconfigured and approved manner. What should you do?",
+    "question": "Your company requires that Google Cloud products are created with a specific configuration to comply with your company’s security policies. You need to implement a mechanism that will allow software engineers at your company to deploy and update Google Cloud products in a preconfigured and approved manner. What should you do?",
     "options": [
       "Create Java packages that utilize the Google Cloud Client Libraries for Java to configure Google Cloud products. Store and share the packages in a source code repository.",
       "Create bash scripts that utilize the Google Cloud CLI to configure Google Cloud products. Store and share the bash scripts in a source code repository.",
       "Use the Google Cloud APIs by using curl to configure Google Cloud products. Store and share the curl commands in a source code repository.",
-      "Create Terraform modules that utilize the Google Cloud Terraform Provider to configure Google Cloud products. Store and share the modules in a source code repository. "
+      "Create Terraform modules that utilize the Google Cloud Terraform Provider to configure Google Cloud products. Store and share the modules in a source code repository."
     ],
     "correctAnswer": 3
   },
@@ -2856,7 +2856,7 @@ export const quizQuestions = [
       "Use a standard naming convention for projects that includes the department name. Configure organization policies on the organization and log sinks on the projects.",
       "Use a standard naming convention for projects that includes the department name. Configure both organization policies and log sinks on the projects.",
       "Organize projects under folders for each department. Configure both organization policies and log sinks on the folders.",
-      "Organize projects under folders for each department. Configure organization policies on the organization and log sinks on the folders. "
+      "Organize projects under folders for each department. Configure organization policies on the organization and log sinks on the folders."
     ],
     "correctAnswer": 3
   },
@@ -2865,9 +2865,9 @@ export const quizQuestions = [
     "question": "You are deploying a web application using Compute Engine. You created a managed instance group (MIG) to host the application. You want to follow Google-recommended practices to implement a secure and highly available solution. What should you do?",
     "options": [
       "Use SSL proxy load balancing for the MIG and an A record in your DNS private zone with the load balancer's IP address.",
-      "Use SSL proxy load balancing for the MIG and a CNAME record in your DNS public zone with the load balancer\u2019s IP address.",
-      "Use HTTP(S) load balancing for the MIG and a CNAME record in your DNS private zone with the load balancer\u2019s IP address.",
-      "Use HTTP(S) load balancing for the MIG and an A record in your DNS public zone with the load balancer\u2019s IP address. "
+      "Use SSL proxy load balancing for the MIG and a CNAME record in your DNS public zone with the load balancer’s IP address.",
+      "Use HTTP(S) load balancing for the MIG and a CNAME record in your DNS private zone with the load balancer’s IP address.",
+      "Use HTTP(S) load balancing for the MIG and an A record in your DNS public zone with the load balancer’s IP address."
     ],
     "correctAnswer": 3
   },
