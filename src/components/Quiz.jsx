@@ -139,7 +139,7 @@ const Quiz = ({
       <div className="quiz-container">
         <div className="quiz-welcome">
           <h1 className="quiz-title">
-            {questionsSource === "custom" ? "Custom Quiz" : "Knowledge Quiz"}
+            {questionsSource === "custom" ? "Custom Quiz" : "Google Cloud Associate Quiz"}
           </h1>
           <div className="quiz-info">
             <p>This quiz contains {questionCount} multiple-choice questions.</p>

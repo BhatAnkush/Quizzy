@@ -59,7 +59,7 @@ const QuizApp = () => {
       <div className="main-menu">
         <div className="menu-header">
           <img className="logo gradient-border" src={Images.logo} alt="Quiz App Logo" />
-          <h1 className="app-title">Quiz Application</h1>
+          <h1 className="app-title">Quizzy Spark</h1>
           <p className="app-subtitle">
             Test your knowledge with our built-in questions or upload your own
             custom quiz
@@ -70,11 +70,11 @@ const QuizApp = () => {
           <div className="quiz-option">
             <div className="option-card default-option">
               <div className="option-icon">🧠</div>
-              <h2 className="option-title">Default Quiz</h2>
+              <h2 className="option-title">GCP Quiz</h2>
               <p className="option-description">
-                Take our comprehensive quiz with 50 questions covering various
-                topics including science, history, geography, and general
-                knowledge.
+                Take our comprehensive quiz with 50 questions designed to test your GCP
+                expertise. Perfect for preparing for GCP certifications or just
+                brushing up on your cloud computing knowledge.
               </p>
               <ul className="option-features">
                 <li>60 pre-made questions</li>
@@ -86,7 +86,7 @@ const QuizApp = () => {
                 className="option-button primary"
                 onClick={handleStartDefaultQuiz}
               >
-                Start Default Quiz
+                Start GCP Quiz
               </button>
             </div>
           </div>
@@ -133,6 +133,15 @@ const QuizApp = () => {
               <span className="feature-icon">🌙</span>
               <span>Dark/Light Theme</span>
             </div>
+          </div>
+          
+          <div className="contact-footer">
+            <p className="contact-text">
+              Have questions or feedback? 
+              <a href="mailto:ankushbhataab@gmail.com" className="contact-email">
+                ankushbhataab@gmail.com
+              </a>
+            </p>
           </div>
         </div>
       </div>

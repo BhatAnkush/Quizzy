@@ -184,6 +184,43 @@
   font-size: 1.2rem;
 }
 
+.contact-footer {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-text {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.contact-email {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 8px;
+  transition: color 0.3s ease;
+}
+
+.contact-email:hover {
+  color: #764ba2;
+  text-decoration: underline;
+}
+
+[data-theme="dark"] .contact-email {
+  color: #81c784;
+}
+
+[data-theme="dark"] .contact-email:hover {
+  color: #66bb6a;
+}
+
+[data-theme="dark"] .contact-footer {
+  border-top-color: rgba(255, 255, 255, 0.05);
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
   .quiz-app-container {
