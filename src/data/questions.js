@@ -1689,9 +1689,20 @@ export const quizQuestions = [
       "Configure an SSL Proxy load balancer in front of the application servers.",
       "Configure an Internal UDP load balancer in front of the application servers.",
       "Configure an External HTTP(s) load balancer in front of the application servers.",
-      "Configure an External Network load balancer in front of the application servers. "
+      "Configure an External Network load balancer in front of the application servers."
     ],
     "correctAnswer": 3
+  },
+  {
+    "id": 168,
+    "question": "You are working for a hospital that stores its medical images in an on-premises data room. The hospital wants to use Cloud Storage for archival storage of these images. The hospital wants an automated process to upload any new medical images to Cloud Storage. You need to design and implement a solution. What should you do?",
+    "options": [
+      "Create a Pub/Sub topic, and enable a Cloud Storage trigger for the Pub/Sub topic. Create an application that sends all medical images to the Pub/Sub topic.",
+      "Deploy a Dataflow job from the batch template, Datastore to Cloud Storage. Schedule the batch job on the desired interval.",
+      "Create a script that uses the gsutil command line interface to synchronize the on-premises storage with Cloud Storage. Schedule the script as a cron job.",
+      "In the Cloud Console, go to Cloud Storage. Upload the relevant images to the appropriate bucket."
+    ],
+    "correctAnswer": 2
   },
   {
     "id": 169,
@@ -1700,9 +1711,9 @@ export const quizQuestions = [
       "Turn on Data Access Logs for the buckets they want to audit, and then build a query in the log viewer that filters on Cloud Storage.",
       "Assign the appropriate permissions, and then create a Data Studio report on Admin Activity Audit Logs.",
       "Assign the appropriate permissions, and then use Cloud Monitoring to review metrics.",
-      "Use the export logs API to provide the Admin Activity Audit Logs in the format they want. "
+      "Use the export logs API to provide the Admin Activity Audit Logs in the format they want."
     ],
-    "correctAnswer": 3
+    "correctAnswer": 0
   },
   {
     "id": 170,
@@ -1710,10 +1721,10 @@ export const quizQuestions = [
     "options": [
       "Use the command gcloud auth login and point it to the private key.",
       "Use the command gcloud auth activate-service-account and point it to the private key.",
-      "Place the private key file in the installation directory of the Cloud SDK and rename it to \u05d2 \u20ac credentials.json \u05d2 \u20ac .",
-      "Place the private key file in your home directory and rename it to \u05d2 \u20ac GOOGLE_APPLICATION_CREDENTIALS \u05d2 \u20ac ."
+      "Place the private key file in the installation directory of the Cloud SDK and rename it to \u201ccredentials.json\u201d.",
+      "Place the private key file in your home directory and rename it to \u201cGOOGLE_APPLICATION_CREDENTIALS\u201d."
     ],
-    "correctAnswer": 3
+    "correctAnswer": 1
   },
   {
     "id": 171,
@@ -1722,9 +1733,9 @@ export const quizQuestions = [
       "Set up an export job for the first of the month. Write the export file to an Archive class Cloud Storage bucket.",
       "Save the automatic first-of-the-month backup for three years. Store the backup file in an Archive class Cloud Storage bucket.",
       "Set up an on-demand backup for the first of the month. Write the backup to an Archive class Cloud Storage bucket.",
-      "Convert the automatic first-of-the-month backup to an export file. Write the export file to a Coldline class Cloud Storage bucket. "
+      "Convert the automatic first-of-the-month backup to an export file. Write the export file to a Coldline class Cloud Storage bucket."
     ],
-    "correctAnswer": 3
+    "correctAnswer": 0
   },
   {
     "id": 172,
@@ -1733,7 +1744,7 @@ export const quizQuestions = [
       "In the Log Viewer, filter the logs on severity 'Error' and the name of the Service Account.",
       "Create a sink to BigQuery to export all the logs. Create a Data Studio dashboard on the exported logs.",
       "Create a custom log-based metric for the specific error to be used in an Alerting Policy.",
-      "Grant Project Owner access to the Service Account. "
+      "Grant Project Owner access to the Service Account."
     ],
     "correctAnswer": 2
   },
@@ -1744,7 +1755,7 @@ export const quizQuestions = [
       "Use Cloud Bigtable for data storage.",
       "Use Cloud SQL for data storage.",
       "Use Cloud Spanner for data storage.",
-      "Use Firestore for data storage. "
+      "Use Firestore for data storage."
     ],
     "correctAnswer": 2
   },
@@ -1755,7 +1766,7 @@ export const quizQuestions = [
       "Provision preemptible Compute Engine instances.",
       "Provision Compute Engine instances with GPUs attached.",
       "Provision Compute Engine instances with local SSDs attached.",
-      "Provision Compute Engine instances with M1 machine type. "
+      "Provision Compute Engine instances with M1 machine type."
     ],
     "correctAnswer": 3
   },
@@ -1766,7 +1777,7 @@ export const quizQuestions = [
       "Create and deploy a Custom Resource Definition per microservice.",
       "Create and deploy a Docker Compose File.",
       "Create and deploy a Job per microservice.",
-      "Create and deploy a Deployment per microservice. "
+      "Create and deploy a Deployment per microservice."
     ],
     "correctAnswer": 3
   },
@@ -1777,9 +1788,9 @@ export const quizQuestions = [
       "When creating the instances, specify a Service Account for each instance.",
       "When creating the instances, assign the name of each Service Account as instance metadata.",
       "After starting the instances, use gcloud compute instances update to specify a Service Account for each instance.",
-      "After starting the instances, use gcloud compute instances update to assign the name of the relevant Service Account as instance metadata. "
+      "After starting the instances, use gcloud compute instances update to assign the name of the relevant Service Account as instance metadata."
     ],
-    "correctAnswer": 3
+    "correctAnswer": 0
   },
   {
     "id": 177,
@@ -1788,9 +1799,9 @@ export const quizQuestions = [
       "Create a Cloud Bigtable cluster, and use the HBase API.",
       "Deploy MongoDB Atlas from the Google Cloud Marketplace.",
       "Download a MongoDB installation package, and run it on Compute Engine instances.",
-      "Download a MongoDB installation package, and run it on a Managed Instance Group. "
+      "Download a MongoDB installation package, and run it on a Managed Instance Group."
     ],
-    "correctAnswer": 3
+    "correctAnswer": 1
   },
   {
     "id": 178,
@@ -1799,7 +1810,7 @@ export const quizQuestions = [
       "Create a Data Studio dashboard that uses the related BigQuery tables as a source and give the BI team view access to the Data Studio dashboard.",
       "Create a Service Account for the BI team and distribute a new private key to each member of the BI team.",
       "Use Cloud Scheduler to schedule a batch Dataflow job to copy the data from BigQuery to the BI team's internal data warehouse.",
-      "Assign the IAM role of BigQuery User to a Google Group that contains the members of the BI team. "
+      "Assign the IAM role of BigQuery User to a Google Group that contains the members of the BI team."
     ],
     "correctAnswer": 3
   },
@@ -1810,9 +1821,9 @@ export const quizQuestions = [
       "1. Create a single VPC with a subnet for the DMZ and a subnet for the LAN. 2. Set up firewall rules to open up relevant traffic between the DMZ and the LAN subnets, and another firewall rule to allow public ingress traffic for the DMZ.",
       "1. Create a single VPC with a subnet for the DMZ and a subnet for the LAN. 2. Set up firewall rules to open up relevant traffic between the DMZ and the LAN subnets, and another firewall rule to allow public egress traffic for the DMZ.",
       "1. Create a VPC with a subnet for the DMZ and another VPC with a subnet for the LAN. 2. Set up firewall rules to open up relevant traffic between the DMZ and the LAN subnets, and another firewall rule to allow public ingress traffic for the DMZ.",
-      "1. Create a VPC with a subnet for the DMZ and another VPC with a subnet for the LAN. 2. Set up firewall rules to open up relevant traffic between the DMZ and the LAN subnets, and another firewall rule to allow public egress traffic for the DMZ. "
+      "1. Create a VPC with a subnet for the DMZ and another VPC with a subnet for the LAN. 2. Set up firewall rules to open up relevant traffic between the DMZ and the LAN subnets, and another firewall rule to allow public egress traffic for the DMZ."
     ],
-    "correctAnswer": 3
+    "correctAnswer": 0
   },
   {
     "id": 180,
@@ -1823,7 +1834,7 @@ export const quizQuestions = [
       "Create a new VPC network with subnetworks in all desired regions.",
       "Grant yourself the IAM role of Cloud Spanner Admin."
     ],
-    "correctAnswer": 3
+    "correctAnswer": 0
   },
   {
     "id": 181,
@@ -1831,10 +1842,10 @@ export const quizQuestions = [
     "options": [
       "Create a Cloud Monitoring Workspace.",
       "Create a VPC network in the project.",
-      "Enable the compute googleapis.com API.",
-      "Grant yourself the IAM role of Computer Admin. "
+      "Enable the compute.googleapis.com API.",
+      "Grant yourself the IAM role of Computer Admin."
     ],
-    "correctAnswer": 3
+    "correctAnswer": 2
   },
   {
     "id": 182,
@@ -1843,9 +1854,9 @@ export const quizQuestions = [
       "Deploy the application on GKE, and add a HorizontalPodAutoscaler to the deployment.",
       "Deploy the application on GKE, and add a VerticalPodAutoscaler to the deployment.",
       "Create a GKE cluster with autoscaling enabled on the node pool. Set a minimum and maximum for the size of the node pool.",
-      "Create a separate node pool for each application, and deploy each application to its dedicated node pool. "
+      "Create a separate node pool for each application, and deploy each application to its dedicated node pool."
     ],
-    "correctAnswer": 3
+    "correctAnswer": 2
   },
   {
     "id": 183,
@@ -1854,9 +1865,9 @@ export const quizQuestions = [
       "Create the instance with the default Compute Engine service account. Grant the service account permissions on Cloud Storage.",
       "Create the instance with the default Compute Engine service account. Add metadata to the objects on Cloud Storage that matches the metadata on the new instance.",
       "Create a new service account and assign this service account to the new instance. Grant the service account permissions on Cloud Storage.",
-      "Create a new service account and assign this service account to the new instance. Add metadata to the objects on Cloud Storage that matches the metadata on the new instance. "
+      "Create a new service account and assign this service account to the new instance. Add metadata to the objects on Cloud Storage that matches the metadata on the new instance."
     ],
-    "correctAnswer": 3
+    "correctAnswer": 2
   },
   {
     "id": 184,
@@ -1865,9 +1876,9 @@ export const quizQuestions = [
       "Configure regional storage for the region closest to the users. Configure a Nearline storage class.",
       "Configure regional storage for the region closest to the users. Configure a Standard storage class.",
       "Configure dual-regional storage for the dual region closest to the users. Configure a Nearline storage class.",
-      "Configure dual-regional storage for the dual region closest to the users. Configure a Standard storage class. "
+      "Configure dual-regional storage for the dual region closest to the users. Configure a Standard storage class."
     ],
-    "correctAnswer": 3
+    "correctAnswer": 1
   },
   {
     "id": 185,
@@ -1876,9 +1887,9 @@ export const quizQuestions = [
       "Deploy the application on App Engine. For each update, create a new version of the same service. Configure traffic splitting to send a small percentage of traffic to the new version.",
       "Deploy the application on App Engine. For each update, create a new service. Configure traffic splitting to send a small percentage of traffic to the new service.",
       "Deploy the application on Kubernetes Engine. For a new release, update the deployment to use the new version.",
-      "Deploy the application on Kubernetes Engine. For a new release, create a new deployment for the new version. Update the service to use the new deployment. "
+      "Deploy the application on Kubernetes Engine. For a new release, create a new deployment for the new version. Update the service to use the new deployment."
     ],
-    "correctAnswer": 3
+    "correctAnswer": 0
   },
   {
     "id": 186,
@@ -1887,9 +1898,9 @@ export const quizQuestions = [
       "Invite the user to transfer their existing account.",
       "Invite the user to use an email alias to resolve the conflict.",
       "Tell the user that they must delete their existing account.",
-      "Tell the user to remove all personal email from the existing account. "
+      "Tell the user to remove all personal email from the existing account."
     ],
-    "correctAnswer": 3
+    "correctAnswer": 0
   },
   {
     "id": 187,
@@ -1898,9 +1909,9 @@ export const quizQuestions = [
       "Create an alert in Cloud Monitoring to alert when the percentage of high priority CPU utilization reaches 45%. If you exceed this threshold, add nodes to your instance.",
       "Create an alert in Cloud Monitoring to alert when the percentage of high priority CPU utilization reaches 45%. Use database query statistics to identify queries that result in high CPU usage, and then rewrite those queries to optimize their resource usage.",
       "Create an alert in Cloud Monitoring to alert when the percentage of high priority CPU utilization reaches 65%. If you exceed this threshold, add nodes to your instance.",
-      "Create an alert in Cloud Monitoring to alert when the percentage of high priority CPU utilization reaches 65%. Use database query statistics to identify queries that result in high CPU usage, and then rewrite those queries to optimize their resource usage. "
+      "Create an alert in Cloud Monitoring to alert when the percentage of high priority CPU utilization reaches 65%. Use database query statistics to identify queries that result in high CPU usage, and then rewrite those queries to optimize their resource usage."
     ],
-    "correctAnswer": 3
+    "correctAnswer": 2
   },
   {
     "id": 188,
@@ -1909,9 +1920,9 @@ export const quizQuestions = [
       "BigQuery",
       "Cloud SQL",
       "Cloud Spanner",
-      "Cloud Datastore "
+      "Cloud Datastore"
     ],
-    "correctAnswer": 3
+    "correctAnswer": 1
   },
   {
     "id": 189,
@@ -1920,9 +1931,9 @@ export const quizQuestions = [
       "Use the command gcloud config set container/cluster dev.",
       "Use the command gcloud container clusters update dev.",
       "Create a file called gke.default in the ~/.gcloud folder that contains the cluster name.",
-      "Create a file called defaults.json in the ~/.gcloud folder that contains the cluster name. "
+      "Create a file called defaults.json in the ~/.gcloud folder that contains the cluster name."
     ],
-    "correctAnswer": 3
+    "correctAnswer": 0
   },
   {
     "id": 190,
@@ -1933,7 +1944,7 @@ export const quizQuestions = [
       "Create another project with the ID acme-marketing-data-digest for the Marketing team and deploy the resources there.",
       "Create a new project named Marketing Data Digest and use the ID acme-data-digest. Grant the Project Editor role to the Marketing team."
     ],
-    "correctAnswer": 3
+    "correctAnswer": 2
   },
   {
     "id": 191,
@@ -1942,9 +1953,9 @@ export const quizQuestions = [
       "Configure Cloud Identity-Aware Proxy for HTTPS resources.",
       "Configure Cloud Identity-Aware Proxy for SSH and TCP resources",
       "Create an SSH keypair and store the public key as a project-wide SSH Key.",
-      "Create an SSH keypair and store the private key as a project-wide SSH Key. "
+      "Create an SSH keypair and store the private key as a project-wide SSH Key."
     ],
-    "correctAnswer": 3
+    "correctAnswer": 1
   },
   {
     "id": 192,
@@ -1953,7 +1964,7 @@ export const quizQuestions = [
       "Upload the image to Cloud Storage and create a Kubernetes Service referencing the image.",
       "Upload the image to Cloud Storage and create a Kubernetes Deployment referencing the image.",
       "Upload the image to Container Registry and create a Kubernetes Service referencing the image.",
-      "Upload the image to Container Registry and create a Kubernetes Deployment referencing the image. "
+      "Upload the image to Container Registry and create a Kubernetes Deployment referencing the image."
     ],
     "correctAnswer": 3
   },
@@ -1964,9 +1975,9 @@ export const quizQuestions = [
       "Review the Error Reporting page in the Cloud Console to find any errors.",
       "Use the BigQuery interface to review the nightly job and look for any errors.",
       "Use Cloud Debugger to find out why the data was not refreshed correctly.",
-      "In Cloud Logging, create a filter for your Data Studio report. "
+      "In Cloud Logging, create a filter for your Data Studio report."
     ],
-    "correctAnswer": 3
+    "correctAnswer": 1
   },
   {
     "id": 194,
@@ -1975,9 +1986,9 @@ export const quizQuestions = [
       "Use labels to group resources that share common IAM policies.",
       "Use folders to group resources that share common IAM policies.",
       "Set up a proper billing account structure to group IAM policies.",
-      "Set up a proper project naming structure to group IAM policies. "
+      "Set up a proper project naming structure to group IAM policies."
     ],
-    "correctAnswer": 3
+    "correctAnswer": 1
   },
   {
     "id": 195,
@@ -1986,20 +1997,20 @@ export const quizQuestions = [
       "Use a custom mode VPC network, configure static routes, and use active/passive routing.",
       "Use an automatic mode VPC network, configure static routes, and use active/active routing.",
       "Use a custom mode VPC network, use Cloud Router border gateway protocol (BGP) routes, and use active/passive routing.",
-      "Use an automatic mode VPC network, use Cloud Router border gateway protocol (BGP) routes, and configure policy-based routing. "
+      "Use an automatic mode VPC network, use Cloud Router border gateway protocol (BGP) routes, and configure policy-based routing."
     ],
-    "correctAnswer": 3
+    "correctAnswer": 2
   },
   {
     "id": 196,
-    "question": "You are running multiple microservices in a Kubernetes Engine cluster. One microservice is rendering images. The microservice responsible for the image rendering requires a large amount of CPU time compared to the memory it requires. The other microservices are workloads that are optimized for n1-standard machine types. You need to optimize your cluster so that all workloads are using resources as efficiently as possible. What should you do?",
+    "question": "You are running multiple microservices in a Kubernetes Engine cluster. One microservice is rendering images. The microservice responsible for the image rendering requires a large amount of CPU time compared to the memory it requires. The other microservices are workloads that are optimized for n1-standard machine types. You need to optimize your cluster so that all workloads are using resources as efficiently as possible. What should you should do?",
     "options": [
       "Assign the pods of the image rendering microservice a higher pod priority than the other microservices.",
       "Create a node pool with compute-optimized machine type nodes for the image rendering microservice. Use the node pool with general- purpose machine type nodes for the other microservices.",
       "Use the node pool with general-purpose machine type nodes for the image rendering microservice. Create a node pool with compute- optimized machine type nodes for the other microservices.",
-      "Configure the required amount of CPU and memory in the resource requests specification of the image rendering microservice deployment. Keep the resource requests for the other microservices at the default. "
+      "Configure the required amount of CPU and memory in the resource requests specification of the image rendering microservice deployment. Keep the resource requests for the other microservices at the default."
     ],
-    "correctAnswer": 3
+    "correctAnswer": 1
   },
   {
     "id": 197,
@@ -2008,20 +2019,20 @@ export const quizQuestions = [
       "1. Verify that you are assigned the Billing Administrator IAM role for your organization's Google Cloud Project for the Marketing department. 2. Link the new project to a Marketing Billing Account.",
       "1. Verify that you are assigned the Billing Administrator IAM role for your organization's Google Cloud account. 2. Create a new Google Cloud Project for the Marketing department. 3. Set the default key-value project labels to department:marketing for all services in this project.",
       "1. Verify that you are assigned the Organization Administrator IAM role for your organization's Google Cloud account. 2. Create a new Google Cloud Project for the Marketing department. 3. Link the new project to a Marketing Billing Account.",
-      "1. Verify that you are assigned the Organization Administrator IAM role for your organization's Google Cloud account. 2. Create a new Google Cloud Project for the Marketing department. 3. Set the default key-value project labels to department:marketing for all services in this project. "
+      "1. Verify that you are assigned the Organization Administrator IAM role for your organization's Google Cloud account. 2. Create a new Google Cloud Project for the Marketing department. 3. Set the default key-value project labels to department:marketing for all services in this project."
     ],
-    "correctAnswer": 3
+    "correctAnswer": 0
   },
   {
     "id": 198,
-    "question": "You deployed an application on a managed instance group in Compute Engine. The application accepts Transmission Control Protocol (TCP) traffic on port 389 and requires you to preserve the IP address of the client who is making a request. You want to expose the application to the internet by using a load balancer. What should you do?",
+    "question": "You deployed an application on a managed instance group in Compute Engine. The application accepts Transmission Control Protocol (TCP) traffic on port 389 and requires you to preserve the IP address of the client who is making a request. You want to expose the application to the internet by using a load balancer, What should you do?",
     "options": [
       "Expose the application by using an external TCP Network Load Balancer.",
       "Expose the application by using a TCP Proxy Load Balancer.",
       "Expose the application by using an SSL Proxy Load Balancer.",
-      "Expose the application by using an internal TCP Network Load Balancer. "
+      "Expose the application by using an internal TCP Network Load Balancer."
     ],
-    "correctAnswer": 3
+    "correctAnswer": 0
   },
   {
     "id": 199,
@@ -2030,9 +2041,9 @@ export const quizQuestions = [
       "Use Cloud SQL database with cross-region replication to store game statistics in the EU, US, and APAC regions.",
       "Use Cloud Spanner to store user data mapped to the game statistics.",
       "Use BigQuery to store game statistics with a Redis on Memorystore instance in the front to provide global consistency.",
-      "Store game statistics in a Bigtable database partitioned by username. "
+      "Store game statistics in a Bigtable database partitioned by username."
     ],
-    "correctAnswer": 3
+    "correctAnswer": 1
   },
   {
     "id": 200,
@@ -2043,7 +2054,7 @@ export const quizQuestions = [
       "Cloud Spanner",
       "Bigtable"
     ],
-    "correctAnswer": 3
+    "correctAnswer": 2
   },
   {
     "id": 201,
@@ -2052,7 +2063,7 @@ export const quizQuestions = [
       "In the Google Cloud console, visualize the costs related to the projects in the Reports section.",
       "In the Google Cloud console, visualize the costs related to the projects in the Cost breakdown section.",
       "In the Google Cloud console, use the export functionality of the Cost table. Create a Looker Studio dashboard on top of the CSV export.",
-      "Configure Cloud Billing data export to BigQuery for the billing account. Create a Looker Studio dashboard on top of the BigQuery export. "
+      "Configure Cloud Billing data export to BigQuery for the billing account. Create a Looker Studio dashboard on top of the BigQuery export."
     ],
     "correctAnswer": 3
   },
@@ -2063,9 +2074,9 @@ export const quizQuestions = [
       "Enable Private Service Access on the Cloud Storage Bucket.",
       "Add storage.googleapis.com to the list of restricted services in a VPC Service Controls perimeter and add your project to the list of protected projects.",
       "Enable Private Google Access on the subnet within the custom VPC.",
-      "Deploy a Cloud NAT instance and route the traffic to the dedicated IP address of the Cloud Storage bucket. "
+      "Deploy a Cloud NAT instance and route the traffic to the dedicated IP address of the Cloud Storage bucket."
     ],
-    "correctAnswer": 3
+    "correctAnswer": 2
   },
   {
     "id": 203,
@@ -2074,9 +2085,9 @@ export const quizQuestions = [
       "Use the projects.move method to move the project to your organization. Update the billing account of the project to that of your organization.",
       "Ensure that you have an Organization Administrator Identity and Access Management (IAM) role assigned to you in both organizations. Navigate to the Resource Manager in the startup\u2019s Google Cloud organization, and drag the project to your company's organization.",
       "Create a Private Catalog for the Google Cloud Marketplace, and upload the resources of the startup's production project to the Catalog. Share the Catalog with your organization, and deploy the resources in your company\u2019s project.",
-      "Create an infrastructure-as-code template for all resources in the project by using Terraform, and deploy that template to a new project in your organization. Delete the project from the startup\u2019s Google Cloud organization. "
+      "Create an infrastructure-as-code template for all resources in the project by using Terraform, and deploy that template to a new project in your organization. Delete the project from the startup\u2019s Google Cloud organization."
     ],
-    "correctAnswer": 3
+    "correctAnswer": 0
   },
   {
     "id": 204,
@@ -2085,9 +2096,9 @@ export const quizQuestions = [
       "Create a folder to contain all the dev projects. Create an organization policy to limit resources in US locations.",
       "Create an organization to contain all the dev projects. Create an Identity and Access Management (IAM) policy to limit the resources in US regions.",
       "Create an Identity and Access Management (IAM) policy to restrict the resources locations in the US. Apply the policy to all dev projects.",
-      "Create an Identity and Access Management (IAM) policy to restrict the resources locations in all dev projects. Apply the policy to all dev roles. "
+      "Create an Identity and Access Management (IAM) policy to restrict the resources locations in all dev projects. Apply the policy to all dev roles."
     ],
-    "correctAnswer": 3
+    "correctAnswer": 0
   },
   {
     "id": 205,
@@ -2096,9 +2107,20 @@ export const quizQuestions = [
       "Create one CNAME record to point mydomain.com to the load balancer, and create two A records to point WWW and HOME to mydomain.com respectively.",
       "Create one CNAME record to point mydomain.com to the load balancer, and create two AAAA records to point WWW and HOME to mydomain.com respectively.",
       "Create one A record to point mydomain.com to the load balancer, and create two CNAME records to point WWW and HOME to mydomain.com respectively.",
-      "Create one A record to point mydomain.com to the load balancer, and create two NS records to point WWW and HOME to mydomain.com respectively. "
+      "Create one A record to point mydomain.com to the load balancer, and create two NS records to point WWW and HOME to mydomain.com respectively."
     ],
-    "correctAnswer": 3
+    "correctAnswer": 2
+  },
+  {
+    "id": 206,
+    "question": "You have two subnets (subnet-a and subnet-b) in the default VPC. Your database servers are running in subnet-a. Your application servers and web servers are running in subnet-b. You want to configure a firewall rule that only allows database traffic from the application servers to the database servers. What should you do?",
+    "options": [
+      "1. Create service accounts sa-app and sa-db. \u2022 Associate service account sa-app with the application servers and the service account sa-db with the database servers. \u2022 Create an ingress firewall rule to allow network traffic from source service account sa-app to target service account sa-db.",
+      "Create network tags app-server and db-server. \u2022 Add the app-server tag to the application servers and the db-server tag to the database servers. \u2022 Create an egress firewall rule to allow network traffic from source network tag app-server to target network tag db-server.",
+      "Create a service account sa-app and a network tag db-server. Associate the service account sa-app with the application servers and the network tag db-server with the database servers. \u2022 Create an ingress firewall rule to allow network traffic from source VPC IP addresses and target the subnet-a IP addresses.",
+      "Create a network tag app-server and service account sa-db. \u2022 Add the tag to the application servers and associate the service account with the database servers. \u2022 Create an egress firewall rule to allow network traffic from source network tag app-server to target service account sa-db."
+    ],
+    "correctAnswer": 0
   },
   {
     "id": 207,
@@ -2107,9 +2129,9 @@ export const quizQuestions = [
       "Search for the CMS solution in Google Cloud Marketplace. Use gcloud CLI to deploy the solution.",
       "Search for the CMS solution in Google Cloud Marketplace. Deploy the solution directly from Cloud Marketplace.",
       "Search for the CMS solution in Google Cloud Marketplace. Use Terraform and the Cloud Marketplace ID to deploy the solution with the appropriate parameters.",
-      "Use the installation guide of the CMS provider. Perform the installation through your configuration management system. "
+      "Use the installation guide of the CMS provider. Perform the installation through your configuration management system."
     ],
-    "correctAnswer": 3
+    "correctAnswer": 1
   },
   {
     "id": 208,
@@ -2118,7 +2140,7 @@ export const quizQuestions = [
       "Create a Billing account, associate a payment method with it, and provide all project creators with permission to associate that billing account with their projects.",
       "Grant all engineers permission to create their own billing accounts for each new project.",
       "Apply for monthly invoiced billing, and have a single invoice for the project paid by the finance team.",
-      "Create a billing account, associate it with a monthly purchase order (PO), and send the PO to Google Cloud. "
+      "Create a billing account, associate it with a monthly purchase order (PO), and send the PO to Google Cloud."
     ],
     "correctAnswer": 0
   },
@@ -2129,7 +2151,7 @@ export const quizQuestions = [
       "Open the Google Cloud console, and check the Identity and Access Management (IAM) roles assigned to the service account at the project or inherited from the folder or organization levels.",
       "Open the Google Cloud console, and check the organization policies.",
       "Open the Google Cloud console, and run a query to determine which resources this service account can access.",
-      "Open the Google Cloud console, and run a query of the audit logs to find permission denied errors for this service account. "
+      "Open the Google Cloud console, and run a query of the audit logs to find permission denied errors for this service account."
     ],
     "correctAnswer": 0
   },
@@ -2142,7 +2164,7 @@ export const quizQuestions = [
       "Use a third party tool to provide remote access to the instances.",
       "Create a bastion host with public internet access. Create the SSH tunnel to the instance through the bastion host."
     ],
-    "correctAnswer": 3
+    "correctAnswer": 1
   },
   {
     "id": 211,
@@ -2151,7 +2173,7 @@ export const quizQuestions = [
       "Create a custom role, and add all the required compute.disks.list and compute.images.list permissions as includedPermissions. Grant the custom role to the user at the project level.",
       "Create a custom role based on the Compute Image User role. Add the compute.disks.list to the includedPermissions field. Grant the custom role to the user at the project level.",
       "Create a custom role based on the Compute Storage Admin role. Exclude unnecessary permissions from the custom role. Grant the custom role to the user at the project level.",
-      "Grant the Compute Storage Admin role at the project level. "
+      "Grant the Compute Storage Admin role at the project level."
     ],
     "correctAnswer": 0
   },
@@ -2162,9 +2184,9 @@ export const quizQuestions = [
       "Set the minimum number of instances for your Cloud Run service to 3.",
       "Set the concurrency number to 1 for your Cloud Run service.",
       "Set the maximum number of instances for your Cloud Run service to 100.",
-      "Update your web application to use the protocol HTTP/2 instead of HTTP/1.1. "
+      "Update your web application to use the protocol HTTP/2 instead of HTTP/1.1."
     ],
-    "correctAnswer": 3
+    "correctAnswer": 0
   },
   {
     "id": 213,
@@ -2173,9 +2195,9 @@ export const quizQuestions = [
       "Stream data to Pub/Sub, and use Dataflow to send data to Cloud Storage.",
       "Stream data to Pub/Sub, and use Storage Transfer Service to send data to BigQuery.",
       "Stream data to Dataflow, and use Dataprep by Trifacta to send data to Bigtable.",
-      "Stream data to Dataflow, and use Storage Transfer Service to send data to BigQuery. "
+      "Stream data to Dataflow, and use Storage Transfer Service to send data to BigQuery."
     ],
-    "correctAnswer": 3
+    "correctAnswer": 0
   },
   {
     "id": 214,
@@ -2184,7 +2206,18 @@ export const quizQuestions = [
       "Add a secondary IP range 10.1.0.0/20 to the subnet.",
       "Change the subnet IP range from 10.0.0.0/20 to 10.0.0.0/18.",
       "Change the subnet IP range from 10.0.0.0/20 to 10.0.0.0/22.",
-      "Convert the subnet IP range from IPv4 to IPv6. "
+      "Convert the subnet IP range from IPv4 to IPv6."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": 215,
+    "question": "Your company requires all developers to have the same permissions, regardless of the Google Cloud project they are working on. Your company's security policy also restricts developer permissions to Compute Engine, Cloud Functions, and Cloud SQL. You want to implement the security policy with minimal effort. What should you do?",
+    "options": [
+      "Create a custom role with Compute Engine, Cloud Functions, and Cloud SQL permissions in one project within the Google Cloud organization. \u2022 Copy the role across all projects created within the organization with the gcloud iam roles copy command. Assign the role to developers in those projects.",
+      "Add all developers to a Google group in Google Groups for Workspace. Assign the predefined role of Compute Admin to the Google group at the Google Cloud organization level.",
+      "Add all developers to a Google group in Cloud Identity. Assign predefined roles for Compute Engine, Cloud Functions, and Cloud SQL permissions to the Google group for each project in the Google Cloud organization.",
+      "Add all developers to a Google group in Cloud Identity. Create a custom role with Compute Engine, Cloud Functions, and Cloud SQL permissions at the Google Cloud organization level. \u2022 Assign the custom role to the Google group."
     ],
     "correctAnswer": 3
   },
@@ -2195,9 +2228,9 @@ export const quizQuestions = [
       "Create a Pub/Sub topic, and enable a Cloud Storage trigger for the Pub/Sub topic. Create an application that sends all medical images to the Pub/Sub topic.",
       "Create a script that uses the gcloud storage command to synchronize the on-premises storage with Cloud Storage, Schedule the script as a cron job.",
       "Create a Pub/Sub topic, and create a Cloud Function connected to the topic that writes data to Cloud Storage. Create an application that sends all medical images to the Pub/Sub topic.",
-      "In the Google Cloud console, go to Cloud Storage. Upload the relevant images to the appropriate bucket. "
+      "In the Google Cloud console, go to Cloud Storage. Upload the relevant images to the appropriate bucket."
     ],
-    "correctAnswer": 2
+    "correctAnswer": 1
   },
   {
     "id": 217,
@@ -2206,9 +2239,9 @@ export const quizQuestions = [
       "Bigtable",
       "BigQuery",
       "Cloud SQL",
-      "Firestore "
+      "Firestore"
     ],
-    "correctAnswer": 3
+    "correctAnswer": 2
   },
   {
     "id": 218,
@@ -2217,20 +2250,20 @@ export const quizQuestions = [
       "Create an Instance Template with Spot VMs On. Create a Managed Instance Group from the template and adjust Target CPU Utilization. Migrate the workload.",
       "Migrate the workload to a Compute Engine VM. Start and stop the instance as needed.",
       "Migrate the workload to a Google Kubernetes Engine cluster with Spot nodes.",
-      "Migrate the workload to a Compute Engine Spot VM. "
+      "Migrate the workload to a Compute Engine Spot VM."
     ],
-    "correctAnswer": 0
+    "correctAnswer": 1
   },
   {
     "id": 219,
-    "question": "You are planning to migrate the following on-premises data management solutions to Google Cloud: \u2022 One MySQL cluster for your main database \u2022 Apache Kafka for your event streaming platform \u2022 One Cloud SQL for PostgreSQL database for your analytical and reporting needs You want to implement Google-recommended solutions for the migration. You need to ensure that the new solutions provide global scalability and require minimal operational and infrastructure management. What should you do?",
+    "question": "You are planning to migrate the following on-premises data management solutions to Google Cloud:\n\u2022 One MySQL cluster for your main database\n\u2022 Apache Kafka for your event streaming platform\n\u2022 One Cloud SQL for PostgreSQL database for your analytical and reporting needs\nYou want to implement Google-recommended solutions for the migration. You need to ensure that the new solutions provide global scalability and require minimal operational and infrastructure management. What should you do?",
     "options": [
       "Migrate from MySQL to Cloud SQL, from Kafka to Pub/Sub, and from Cloud SQL for PostgreSQL to BigQuery.",
       "Migrate from MySQL to Cloud Spanner, from Kafka to Pub/Sub, and from Cloud SQL for PostgreSQL to BigQuery.",
       "Migrate from MySQL to Cloud Spanner, from Kafka to Memorystore, and from Cloud SQL for PostgreSQL to Cloud SQL.",
-      "Migrate from MySQL to Cloud SQL, from Kafka to Memorystore, and from Cloud SQL for PostgreSQL to Cloud SQL. "
+      "Migrate from MySQL to Cloud SQL., from Kafka to Memorystore, and from Cloud SQL for PostgreSQL to Cloud SQL."
     ],
-    "correctAnswer": 3
+    "correctAnswer": 1
   },
   {
     "id": 220,
@@ -2239,7 +2272,7 @@ export const quizQuestions = [
       "Create a Cloud Scheduler task to regularly scan your projects and delete mismatched users.",
       "Create a Cloud Scheduler task to regularly scan your resources and delete mismatched users.",
       "Set an organizational policy constraint to limit identities by domain to automatically remove mismatched users.",
-      "Set an organizational policy constraint to limit identities by domain, and then retroactively remove the existing mismatched users."
+      "Set an organizational policy constraint to limit identities by domain, and then retroactively remove the existing mismatched users"
     ],
     "correctAnswer": 3
   },
@@ -2250,9 +2283,9 @@ export const quizQuestions = [
       "Use the gcloud compute instances update command with a REFRESH action for the VM.",
       "Use the gcloud compute instance-groups managed recreate-instances command to recreate the VM.",
       "Select the MIG from the Compute Engine console and, in the menu, select Replace VMs.",
-      "Update and apply the instance template of the MIG. "
+      "Update and apply the instance template of the MIG."
     ],
-    "correctAnswer": 3
+    "correctAnswer": 1
   },
   {
     "id": 222,
@@ -2261,9 +2294,9 @@ export const quizQuestions = [
       "Use kubectl to create the label deleted-by-cnrm and to change its value to true for the topic resource.",
       "Use kubectl to delete the topic resource.",
       "Use gcloud CLI to delete the topic.",
-      "Use gcloud CLI to update the topic label managed-by-cnrm to false. "
+      "Use gcloud CLI to update the topic label managed-by-cnrm to false."
     ],
-    "correctAnswer": 3
+    "correctAnswer": 1
   },
   {
     "id": 223,
@@ -2272,9 +2305,9 @@ export const quizQuestions = [
       "Migrate the users to Active Directory. Connect the Human Resources system to Active Directory. Turn on Google Cloud Directory Sync (GCDS) for Cloud Identity. Turn on Identity Federation from Cloud Identity to Active Directory.",
       "Organize the users in Cloud Identity into groups. Enforce multi-factor authentication in Cloud Identity.",
       "Turn on identity federation between Cloud Identity and Google Workspace. Enforce multi-factor authentication for domain wide delegation.",
-      "Use a third-party identity provider service through federation. Synchronize the users from Google Workplace to the third-party provider in real time. "
+      "Use a third-party identity provider service through federation. Synchronize the users from Google Workplace to the third-party provider in real time."
     ],
-    "correctAnswer": 0
+    "correctAnswer": 1
   },
   {
     "id": 224,
@@ -2283,7 +2316,7 @@ export const quizQuestions = [
       "Deploy your solution on multiple standalone Compute Engine instances, and increase the number of existing instances when CPU utilization on Cloud Monitoring reaches a certain threshold.",
       "Deploy your solution on multiple standalone Compute Engine instances, and replace existing instances with high-CPU instances when CPU utilization on Cloud Monitoring reaches a certain threshold.",
       "Deploy your solution to an instance group, and increase the number of available instances whenever you see high CPU utilization in Cloud Monitoring.",
-      "Deploy your solution to an instance group, and set the autoscaling based on CPU utilization. "
+      "Deploy your solution to an instance group, and set the autoscaling based on CPU utilization."
     ],
     "correctAnswer": 3
   },
@@ -2294,9 +2327,9 @@ export const quizQuestions = [
       "Create an instance template that contains valid syntax which will be used by the instance group. Delete any persistent disks with the same name as instance names.",
       "Create an instance template that contains valid syntax that will be used by the instance group. Verify that the instance name and persistent disk name values are not the same in the template.",
       "Verify that the instance template being used by the instance group contains valid syntax. Delete any persistent disks with the same name as instance names. Set the disks.autoDelete property to true in the instance template.",
-      "Delete the current instance template and replace it with a new instance template. Verify that the instance name and persistent disk name values are not the same in the template. Set the disks.autoDelete property to true in the instance template. "
+      "Delete the current instance template and replace it with a new instance template. Verify that the instance name and persistent disk name values are not the same in the template. Set the disks.autoDelete property to true in the instance template."
     ],
-    "correctAnswer": 3
+    "correctAnswer": 0
   },
   {
     "id": 226,
@@ -2305,7 +2338,7 @@ export const quizQuestions = [
       "Upload the image to Cloud Storage and create a Kubernetes Service referencing the image.",
       "Upload the image to Cloud Storage and create a Kubernetes Deployment referencing the image.",
       "Upload the image to Artifact Registry and create a Kubernetes Service referencing the image.",
-      "Upload the image to Artifact Registry and create a Kubernetes Deployment referencing the image. "
+      "Upload the image to Artifact Registry and create a Kubernetes Deployment referencing the image."
     ],
     "correctAnswer": 3
   },
@@ -2316,7 +2349,7 @@ export const quizQuestions = [
       "In Cloud Logging, create a filter for your Looker Studio report.",
       "Use the open source CLI tool, Snapshot Debugger, to find out why the data was not refreshed correctly.",
       "Review the Error Reporting page in the Google Cloud console to find any errors.",
-      "Use the BigQuery interface to review the nightly job and look for any errors. "
+      "Use the BigQuery interface to review the nightly job and look for any errors."
     ],
     "correctAnswer": 3
   },
@@ -2327,9 +2360,9 @@ export const quizQuestions = [
       "Run a test using simulated maintenance events. If the test is successful, use Spot N2 Standard VMs when running future jobs.",
       "Run a test using simulated maintenance events. If the test is successful, use N2 Standard VMs when running future jobs.",
       "Run a test using a managed instance group. If the test is successful, use N2 Standard VMs in the managed instance group when running future jobs.",
-      "Run a test using N1 standard VMs instead of N2. If the test is successful, use N1 Standard VMs when running future jobs. "
+      "Run a test using N1 standard VMs instead of N2. If the test is successful, use N1 Standard VMs when running future jobs."
     ],
-    "correctAnswer": 3
+    "correctAnswer": 0
   },
   {
     "id": 229,
@@ -2338,7 +2371,7 @@ export const quizQuestions = [
       "Fill all resources in the Pricing Calculator to get an estimate of the monthly cost.",
       "Use the Reports view in the Cloud Billing Console to view the desired cost information.",
       "Visit the Cost Table page to get a CSV export and visualize it using Looker Studio.",
-      "Configure Billing Data Export to BigQuery and visualize the data in Looker Studio. "
+      "Configure Billing Data Export to BigQuery and visualize the data in Looker Studio."
     ],
     "correctAnswer": 3
   },
@@ -2349,9 +2382,9 @@ export const quizQuestions = [
       "Upload the data to BigQuery using the bq command line tool.",
       "Upload the data to Cloud Storage using the gcloud storage command.",
       "Upload the data into Cloud SQL using the import function in the Google Cloud console.",
-      "Upload the data into Cloud Spanner using the import function in the Google Cloud console. "
+      "Upload the data into Cloud Spanner using the import function in the Google Cloud console."
     ],
-    "correctAnswer": 3
+    "correctAnswer": 1
   },
   {
     "id": 231,
@@ -2360,7 +2393,7 @@ export const quizQuestions = [
       "Navigate to Cloud Logging and view the application logs.",
       "Configure a health check on the instance and set a \u201cconsecutive successes\u201d Healthy threshold value of 1.",
       "Connect to the instance\u2019s serial console and read the application logs.",
-      "Install and configure the Ops agent and view the logs from Cloud Logging. "
+      "Install and configure the Ops agent and view the logs from Cloud Logging."
     ],
     "correctAnswer": 3
   },
@@ -2371,7 +2404,7 @@ export const quizQuestions = [
       "Use the gcloud CLI services enable cloudresourcemanager.googleapis.com command to enable all resources.",
       "Use the gcloud services enable compute.googleapis.com command to enable Compute Engine and the gcloud services enable storage- api.googleapis.com command to enable the Cloud Storage APIs.",
       "Open the Google Cloud console and enable all Google Cloud APIs from the API dashboard.",
-      "Open the Google Cloud console and run gcloud init --project in a Cloud Shell. "
+      "Open the Google Cloud console and run gcloud init --project in a Cloud Shell."
     ],
     "correctAnswer": 1
   },
@@ -2382,7 +2415,7 @@ export const quizQuestions = [
       "Create an instance template with the container image, and deploy a Managed Instance Group with Autoscaling.",
       "Upload Docker images to Artifact Registry, and deploy the application on Google Kubernetes Engine using Standard mode.",
       "Upload Docker images to the Cloud Storage, and deploy the application on Google Kubernetes Engine using Standard mode.",
-      "Upload Docker images to Artifact Registry, and deploy the application on Cloud Run. "
+      "Upload Docker images to Artifact Registry, and deploy the application on Cloud Run."
     ],
     "correctAnswer": 3
   },
@@ -2393,20 +2426,20 @@ export const quizQuestions = [
       "Store the application data on a zonal persistent disk. Create a snapshot schedule for the disk. If an outage occurs, create a new disk from the most recent snapshot and attach it to a new VM in another zone.",
       "Store the application data on a zonal persistent disk. If an outage occurs, create an instance in another zone with this disk attached.",
       "Store the application data on a regional persistent disk. Create a snapshot schedule for the disk. If an outage occurs, create a new disk from the most recent snapshot and attach it to a new VM in another zone.",
-      "Store the application data on a regional persistent disk. If an outage occurs, create an instance in another zone with this disk attached. "
+      "Store the application data on a regional persistent disk. If an outage occurs, create an instance in another zone with this disk attached."
     ],
-    "correctAnswer": 2
+    "correctAnswer": 3
   },
   {
     "id": 235,
     "question": "The DevOps group in your organization needs full control of Compute Engine resources in your development project. However, they should not have permission to create or update any other resources in the project. You want to follow Google\u2019s recommendations for setting permissions for the DevOps group. What should you do?",
     "options": [
       "Grant the basic role roles/viewer and the predefined role roles/compute.admin to the DevOps group.",
-      "Create an IAM policy and grant all compute.instanceAdmin.* permissions to the policy. Attach the policy to the DevOps group.",
+      "Create an IAM policy and grant all compute.instanceAdmin. permissions to the policy. Attach the policy to the DevOps group.",
       "Create a custom role at the folder level and grant all compute.instanceAdmin.* permissions to the role. Grant the custom role to the DevOps group.",
-      "Grant the basic role roles/editor to the DevOps group. "
+      "Grant the basic role roles/editor to the DevOps group."
     ],
-    "correctAnswer": 2
+    "correctAnswer": 0
   },
   {
     "id": 236,
@@ -2415,9 +2448,9 @@ export const quizQuestions = [
       "Use your existing CI/CD pipeline. Use the generated Docker images and deploy them to Cloud Run. Update the configurations and the required endpoints.",
       "Use your existing continuous integration and delivery (CI/CD) pipeline. Use the generated Docker images and deploy them to Cloud Function. Use the same configuration as on-premises.",
       "Use the existing codebase and deploy each service as a separate Cloud Function. Update the configurations and the required endpoints.",
-      "Use your existing codebase and deploy each service as a separate Cloud Run. Use the same configurations as on-premises. "
+      "Use your existing codebase and deploy each service as a separate Cloud Run. Use the same configurations as on-premises."
     ],
-    "correctAnswer": 1
+    "correctAnswer": 0
   },
   {
     "id": 237,
@@ -2426,9 +2459,9 @@ export const quizQuestions = [
       "Assign the pods of the image rendering microservice a higher pod priority than the other microservices.",
       "Create a node pool with compute-optimized machine type nodes for the image rendering microservice. Use the node pool with general- purpose machine type nodes for the other microservices.",
       "Use the node pool with general-purpose machine type nodes for the image rendering microservice. Create a node pool with compute- optimized machine type nodes for the other microservices.",
-      "Configure the required amount of CPU and memory in the resource requests specification of the image rendering microservice deployment. Keep the resource requests for the other microservices at the default. "
+      "Configure the required amount of CPU and memory in the resource requests specification of the image rendering microservice deployment. Keep the resource requests for the other microservices at the default."
     ],
-    "correctAnswer": 3
+    "correctAnswer": 1
   },
   {
     "id": 238,
@@ -2437,9 +2470,9 @@ export const quizQuestions = [
       "Create a GKE Autopilot cluster. Enroll the cluster in the rapid release channel.",
       "Create a GKE Autopilot cluster. Enroll the cluster in the stable release channel.",
       "Create a zonal GKE standard cluster. Enroll the cluster in the stable release channel.",
-      "Create a regional GKE standard cluster. Enroll the cluster in the rapid release channel. "
+      "Create a regional GKE standard cluster. Enroll the cluster in the rapid release channel."
     ],
-    "correctAnswer": 3
+    "correctAnswer": 1
   },
   {
     "id": 239,
@@ -2448,9 +2481,9 @@ export const quizQuestions = [
       "Export Cloud Monitoring metrics to BigQuery and use a Looker Studio dashboard to monitor your web application\u2019s latency.",
       "Create an alert policy to send a notification when the HTTP response latency exceeds the specified threshold.",
       "Implement an App Engine service which invokes the Cloud Monitoring API and sends a notification in case of anomalies.",
-      "Use the Cloud Monitoring dashboard to observe latency and take the necessary actions when the response latency exceeds the specified threshold. "
+      "Use the Cloud Monitoring dashboard to observe latency and take the necessary actions when the response latency exceeds the specified threshold."
     ],
-    "correctAnswer": 3
+    "correctAnswer": 1
   },
   {
     "id": 240,
@@ -2461,7 +2494,18 @@ export const quizQuestions = [
       "Upload the code to Cloud Functions. Use Cloud Scheduler to start the application.",
       "Lift and shift to a VM on Compute Engine. Use an instance schedule to start and stop the instance."
     ],
-    "correctAnswer": 1
+    "correctAnswer": 3
+  },
+  {
+    "id": 241,
+    "question": "You used the gcloud container clusters command to create two Google Cloud Kubernetes (GKE) clusters: prod-cluster and dev-cluster.\nprod-cluster is a standard cluster.\ndev-cluster is an auto-pilot cluster.\nWhen you run the kubectl get nodes command, you only see the nodes from prod-cluster. Which commands should you run to check the node status for dey-cluster?",
+    "options": [
+      "gcloud container clusters get-credentials dev-cluster\nkubectl get nodes",
+      "gcloud container clusters update --generate-password dev-cluster\nkubectl get nodes",
+      "kubectl config set-context dev-cluster\nkubectl cluster-info",
+      "kubectl config set-credentials dev-cluster\nkubectl cluster-info"
+    ],
+    "correctAnswer": 0
   },
   {
     "id": 242,
@@ -2470,9 +2514,9 @@ export const quizQuestions = [
       "Implement a Cloud Run job to rotate all service account keys periodically in pj-sa. Enforce an org policy to deny service account key creation with an exception to pj-sa.",
       "Implement a Kubernetes CronJob to rotate all service account keys periodically. Disable attachment of service accounts to resources in all projects with an exception to pj-sa.",
       "Enforce an org policy constraint allowing the lifetime of service account keys to be 24 hours. Enforce an org policy constraint denying service account key creation with an exception on pj-sa.",
-      "Enforce a DENY org policy constraint over the lifetime of service account keys for 24 hours. Disable attachment of service accounts to resources in all projects with an exception to pj-sa. "
+      "Enforce a DENY org policy constraint over the lifetime of service account keys for 24 hours. Disable attachment of service accounts to resources in all projects with an exception to pj-sa."
     ],
-    "correctAnswer": 3
+    "correctAnswer": 2
   },
   {
     "id": 243,
@@ -2481,9 +2525,20 @@ export const quizQuestions = [
       "Create a Google spreadsheet with multiple Google Cloud resource combinations. On a separate sheet, import the current Google Cloud prices and use these prices for the calculations within formulas.",
       "Use the Google Cloud Pricing Calculator and select the Cloud Operations template to define your web application with as much detail as possible.",
       "Implement a similar architecture on Google Cloud, and run a reasonable load test on a smaller scale. Check the billing information, and calculate the estimated costs based on the real load your system usually handles.",
-      "Use the Google Cloud Pricing Calculator to determine the cost of every Google Cloud resource you expect to use. Use similar size instances for the web server, and use your current on-premises machines as a comparison for Cloud SQL. "
+      "Use the Google Cloud Pricing Calculator to determine the cost of every Google Cloud resource you expect to use. Use similar size instances for the web server, and use your current on-premises machines as a comparison for Cloud SQL."
     ],
     "correctAnswer": 3
+  },
+  {
+    "id": 244,
+    "question": "You have a Bigtable instance that consists of three nodes that store personally identifiable information (PII) data. You need to log all read or write operations, including any metadata or configuration reads of this database table, in your company's Security Information and Event Management (SIEM) system. What should you do?",
+    "options": [
+      "Navigate to Cloud Monitoring in the Google Cloud console, and create a custom monitoring job for the Bigtable instance to track all changes.\n\u2022 Create an alert by using webhook endpoints, with the SIEM endpoint as a receiver.",
+      "Navigate to the Audit Logs page in the Google Cloud console, and enable Admin Write logs for the Bigtable instance.\n\u2022 Create a Cloud Functions instance to export logs from Cloud Logging to your SIEM.",
+      "Navigate to the Audit Logs page in the Google Cloud console, and enable Data Read, Data Write and Admin Read logs for the Bigtable instance.\n\u2022 Create a Pub/Sub topic as a Cloud Logging sink destination, and add your SIEM as a subscriber to the topic.",
+      "Install the Ops Agent on the Bigtable instance during configuration.\n\u2022 Create a service account with read permissions for the Bigtable instance.\n\u2022 Create a custom Dataflow job with this service account to export logs to the company's SIEM system."
+    ],
+    "correctAnswer": 2
   },
   {
     "id": 245,
@@ -2492,18 +2547,29 @@ export const quizQuestions = [
       "Deploy a private autopilot cluster.",
       "Deploy a public autopilot cluster.",
       "Deploy a standard public cluster and enable shielded nodes.",
-      "Deploy a standard private cluster and enable shielded nodes. "
+      "Deploy a standard private cluster and enable shielded nodes."
     ],
-    "correctAnswer": 3
+    "correctAnswer": 0
   },
   {
     "id": 246,
-    "question": "Your company wants to migrate their on-premises workloads to Google Cloud. The current on-premises workloads consist of: \u2022 A Flask web application \u2022 A backend API \u2022 A scheduled long-running background job for ETL and reporting You need to keep operational costs low. You want to follow Google-recommended practices to migrate these workloads to serverless solutions on Google Cloud. What should you do?",
+    "question": "Your company wants to migrate their on-premises workloads to Google Cloud. The current on-premises workloads consist of:\n\u2022 A Flask web application\n\u2022 A backend API\n\u2022 A scheduled long-running background job for ETL and reporting\nYou need to keep operational costs low. You want to follow Google-recommended practices to migrate these workloads to serverless solutions on Google Cloud. What should you do?",
     "options": [
       "Migrate the web application to App Engine and the backend API to Cloud Run. Use Cloud Tasks to run your background job on Compute Engine.",
       "Migrate the web application to App Engine and the backend API to Cloud Run. Use Cloud Tasks to run your background job on Cloud Run.",
       "Run the web application on a Cloud Storage bucket and the backend API on Cloud Run. Use Cloud Tasks to run your background job on Cloud Run.",
-      "Run the web application on a Cloud Storage bucket and the backend API on Cloud Run. Use Cloud Tasks to run your background job on Compute Engine. "
+      "Run the web application on a Cloud Storage bucket and the backend API on Cloud Run. Use Cloud Tasks to run your background job on Compute Engine."
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "id": 247,
+    "question": "Your company is moving its continuous integration and delivery (CI/CD) pipeline to Compute Engine instances. The pipeline will manage the entire cloud infrastructure through code. How can you ensure that the pipeline has appropriate permissions while your system is following security best practices?",
+    "options": [
+      "Attach a single service account to the compute instances.\n\u2022 Add minimal rights to the service account.\n\u2022 Allow the service account to impersonate a Cloud Identity user with elevated permissions to create, update, or delete resources.",
+      "Add a step for human approval to the CI/CD pipeline before the execution of the infrastructure provisioning\n\u2022 Use the human approvals IAM account for the provisioning.",
+      "Attach a single service account to the compute instances.\n\u2022 Add all required Identity and Access Management (IAM) permissions to this service account to create, update, or delete resources.",
+      "Create multiple service accounts, one for each pipeline with the appropriate minimal Identity and Access Management (IAM) permissions.\n\u2022 Use a secret manager service to store the key files of the service accounts.\n\u2022 Allow the CI/CD pipeline to request the appropriate secrets during the execution of the pipeline."
     ],
     "correctAnswer": 3
   },
@@ -2514,9 +2580,9 @@ export const quizQuestions = [
       "Create an object lifecycle on the storage bucket to change the storage class to Archive Storage for objects with an age over 30 days.",
       "Create a cron job in Cloud Scheduler to call a Cloud Functions instance every day to delete files older than 30 days.",
       "Create a retention policy on the storage bucket of 30 days, and lock the bucket by using a retention policy lock.",
-      "Enable object versioning on the storage bucket and add lifecycle rules to expire non-current versions after 30 days. "
+      "Enable object versioning on the storage bucket and add lifecycle rules to expire non-current versions after 30 days."
     ],
-    "correctAnswer": 3
+    "correctAnswer": 0
   },
   {
     "id": 249,
@@ -2525,13 +2591,13 @@ export const quizQuestions = [
       "Configure the Horizontal Pod Autoscaler for availability, and configure the cluster autoscaler for suggestions.",
       "Configure the Horizontal Pod Autoscaler for availability, and configure the Vertical Pod Autoscaler recommendations for suggestions.",
       "Configure the Vertical Pod Autoscaler recommendations for availability, and configure the Cluster autoscaler for suggestions.",
-      "Configure the Vertical Pod Autoscaler recommendations for availability, and configure the Horizontal Pod Autoscaler for suggestions. "
+      "Configure the Vertical Pod Autoscaler recommendations for availability, and configure the Horizontal Pod Autoscaler for suggestions."
     ],
-    "correctAnswer": 3
+    "correctAnswer": 1
   },
   {
     "id": 250,
-    "question": "You need to migrate invoice documents stored on-premises to Cloud Storage. The documents have the following storage requirements: \u2022 Documents must be kept for five years. \u2022 Up to five revisions of the same invoice document must be stored, to allow for corrections. \u2022 Documents older than 365 days should be moved to lower cost storage tiers. You want to follow Google-recommended practices to minimize your operational and development costs. What should you do?",
+    "question": "You need to migrate invoice documents stored on-premises to Cloud Storage. The documents have the following storage requirements:\n\u2022 Documents must be kept for five years.\n\u2022 Up to five revisions of the same invoice document must be stored, to allow for corrections.\n\u2022 Documents older than 365 days should be moved to lower cost storage tiers.\nYou want to follow Google-recommended practices to minimize your operational and development costs. What should you do?",
     "options": [
       "Enable retention policies on the bucket, and use Cloud Scheduler to invoke a Cloud Function to move or delete your documents based on their metadata.",
       "Enable retention policies on the bucket, use lifecycle rules to change the storage classes of the objects, set the number of versions, and delete old files.",
@@ -2547,7 +2613,7 @@ export const quizQuestions = [
       "Configure username and password by using gcloud config set proxy/username and gcloud config set proxy/password commands.",
       "Encode username and password in sha256 encoding, and save in to a text file. Use filename as a value in the gcloud config set core/custom_ca_certs_file command.",
       "Provide values for CLOUDSDK_PROXY_USERNAME and CLOUDSDK_PROXY_PASSWORD in the gcloud CLI tool configuration file.",
-      "Set the CLOUDSDK_PROXY_USERNAME and CLOUDSDK_PROXY_PASSWORD properties by using environment variables in your command line tool. "
+      "Set the CLOUDSDK_PROXY_USERNAME and CLOUDSDK_PROXY_PASSWORD properties by using environment variables in your command line tool."
     ],
     "correctAnswer": 3
   },
@@ -2558,7 +2624,7 @@ export const quizQuestions = [
       "Create a cluster with a single node-pool by using standard VMs. Label he fault-tolerant Deployments as spot_true.",
       "Create a cluster with a single node-pool by using Spot VMs. Label the critical Deployments as spot_false.",
       "Create a cluster with both a Spot VM node pool and a node pool by using standard VMs. Deploy the critical deployments on the Spot VM node pool and the fault-tolerant deployments on the node pool by using standard VMs.",
-      "Create a cluster with both a Spot VM node pool and a nods pool by using standard VMs. Deploy the critical deployments on the node pool by using standard VMs and the fault-tolerant deployments on the Spot VM node pool. "
+      "Create a cluster with both a Spot VM node pool and a nods pool by using standard VMs. Deploy the critical deployments on the node pool by using standard VMs and the fault-tolerant deployments on the Spot VM node pool."
     ],
     "correctAnswer": 3
   },
@@ -2569,9 +2635,20 @@ export const quizQuestions = [
       "Deploy the application to Cloud Run. Use gradual rollouts for traffic splitting.",
       "Deploy the application to Google Kubernetes Engine. Use Anthos Service Mash for traffic splitting.",
       "Deploy the application to Cloud Functions. Specify the version number in the functions name.",
-      "Deploy the application to App Engine. For each new version, create a new service. "
+      "Deploy the application to App Engine. For each new version, create a new service."
     ],
-    "correctAnswer": 3
+    "correctAnswer": 0
+  },
+ {
+    "id": 254,
+    "question": "Your company's security vulnerability management policy wants a member of the security team to have visibility into vulnerabilities and other OS metadata for a specific Compute Engine instance. This Compute Engine instance hosts a critical application in your Google Cloud project. You need to implement your company's security vulnerability management policy. What should you do?",
+    "options": [
+      "Ensure that the Ops Agent is installed on the Compute Engine instance.\n\u2022 Create a custom metric in the Cloud Monitoring dashboard.\n\u2022 Provide the security team member with access to this dashboard.",
+      "Ensure that the Ops Agent is installed on the Compute Engine instance.\n\u2022 Provide the security team member roles/osconfig.inventoryViewer permission.",
+      "Ensure that the OS Config agent is installed on the Compute Engine instance.\n\u2022Provide the security team member roles/osconfig.vulnerabilityReportViewer permission.",
+      "• Ensure that the OS Config agent is installed on the Compute Engine instance. \n\u2022Create a log sink to BigQuery dataset. \n\u2022Provide the security team member with access to this dataset."
+    ],
+     "correctAnswer": 2
   },
   {
     "id": 255,

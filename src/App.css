@@ -1,13 +1,79 @@
+/* CSS Variables for light theme */
+:root {
+  --bg-primary: rgba(255, 255, 255, 0.95);
+  --bg-secondary: rgba(248, 249, 250, 0.9);
+  --text-primary: #2c3e50;
+  --text-secondary: #5a6c7d;
+  --text-muted: #95a5a6;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --shadow-hover: rgba(0, 0, 0, 0.15);
+  --border: rgba(0, 0, 0, 0.1);
+  --success: linear-gradient(135deg, #00b894 0%, #00a085 100%);
+  --error: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+  --warning: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+  --info: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  --primary: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
+  --secondary: linear-gradient(135deg, #fd79a8 0%, #fdcb6e 100%);
+}
+
+/* CSS Variables for dark theme */
+[data-theme="dark"] {
+  --bg-primary: rgba(45, 52, 54, 0.95);
+  --bg-secondary: rgba(55, 66, 70, 0.9);
+  --text-primary: #ddd;
+  --text-secondary: #b2bec3;
+  --text-muted: #636e72;
+  --shadow: rgba(0, 0, 0, 0.3);
+  --shadow-hover: rgba(0, 0, 0, 0.4);
+  --border: rgba(255, 255, 255, 0.1);
+  --success: linear-gradient(135deg, #00b894 0%, #55efc4 100%);
+  --error: linear-gradient(135deg, #e17055 0%, #fd79a8 100%);
+  --warning: linear-gradient(135deg, #fdcb6e 0%, #e17055 100%);
+  --info: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+  --primary: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
+  --secondary: linear-gradient(135deg, #fd79a8 0%, #fdcb6e 100%);
+}
+
 .app {
   min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  background-size: 300% 300%;
+  animation: gradientShift 15s ease infinite;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   padding: 20px 0;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.app::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
 }
 
 [data-theme="dark"] .app {
-  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #2c5282 100%);
+  background-size: 300% 300%;
+}
+
+[data-theme="dark"] .app::before {
+  background: radial-gradient(circle at 20% 80%, rgba(74, 144, 226, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(129, 199, 132, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 40% 40%, rgba(255, 183, 77, 0.1) 0%, transparent 50%);
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 * {
@@ -25,28 +91,50 @@ button {
 
 /* Scrollbar Styling */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 12px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  backdrop-filter: blur(10px);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #c1c1c1;
-  border-radius: 4px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 6px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #a8a8a8;
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-track {
+  background: rgba(45, 52, 54, 0.3);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+  border-color: rgba(116, 185, 255, 0.2);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #0984e3 0%, #74b9ff 100%);
 }
 
 /* Focus styles for accessibility */
 button:focus,
 input:focus {
-  outline: 2px solid #2196f3;
+  outline: 3px solid rgba(116, 185, 255, 0.6);
   outline-offset: 2px;
+  border-radius: 4px;
+}
+
+[data-theme="dark"] button:focus,
+[data-theme="dark"] input:focus {
+  outline-color: rgba(255, 183, 77, 0.6);
 }
 
 /* Animation for smooth transitions */

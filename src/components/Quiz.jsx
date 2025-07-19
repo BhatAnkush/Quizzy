@@ -195,11 +195,13 @@ const Quiz = ({
           <img className="quiz-header-logo" src={Images.logo} alt="Quizzy Spark Logo" />
           <span className="quiz-header-brand">Quizzy Spark</span>
         </div>
-        <QuizTimer
-          timeLeft={timeLeft}
-          setTimeLeft={setTimeLeft}
-          onTimeUp={handleTimeUp}
-        />
+        <div className="quiz-timer">
+          <QuizTimer
+            timeLeft={timeLeft}
+            setTimeLeft={setTimeLeft}
+            onTimeUp={handleTimeUp}
+          />
+        </div>
         <div className="progress-submit-container">
           <ProgressBar
             progress={progress}
