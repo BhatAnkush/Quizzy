@@ -1,0 +1,80 @@
+.timer {
+  background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  min-width: 180px;
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+  transition: all 0.3s ease;
+}
+
+.timer.warning {
+  background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+  box-shadow: 0 4px 12px rgba(255, 152, 0, 0.3);
+}
+
+.timer.critical {
+  background: linear-gradient(135deg, #f44336 0%, #d32f2f 100%);
+  box-shadow: 0 4px 12px rgba(244, 67, 54, 0.3);
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.timer-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+  opacity: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.timer-display {
+  font-size: 1.8rem;
+  font-weight: 700;
+  font-family: "Courier New", monospace;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .timer {
+    padding: 15px;
+    min-width: 160px;
+  }
+
+  .timer-label {
+    font-size: 0.8rem;
+    margin-bottom: 6px;
+  }
+
+  .timer-display {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .timer {
+    padding: 12px;
+    min-width: 140px;
+  }
+
+  .timer-label {
+    font-size: 0.75rem;
+  }
+
+  .timer-display {
+    font-size: 1.3rem;
+  }
+}
