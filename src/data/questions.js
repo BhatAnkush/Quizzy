@@ -2871,7 +2871,16 @@ export const quizQuestions = [
     "correctAnswer": 3
   }
 ];
+const fisherYatesShuffle = (array) => {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+};
+
 export const getRandomQuestions = (count = 50) => {
-  const shuffled = [...quizQuestions].sort(() => 0.5 - Math.random());
+  const shuffled = fisherYatesShuffle(quizQuestions);
   return shuffled.slice(0, count);
 };
