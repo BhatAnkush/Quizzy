@@ -1064,7 +1064,7 @@ export const quizQuestions = [
       "Create a custom role by removing delete permissions, and add users to that role only.",
       "Create a custom role by removing delete permissions. Add users to the group, and then add the group to the custom role. "
     ],
-    "correctAnswer": 3
+    "correctAnswer": 0
   },
   {
     "id": 103,
