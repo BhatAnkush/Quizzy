@@ -1,5 +1,9 @@
 import { useState, useEffect } from "react";
-import { getRandomQuestions } from "../data/questions";
+import {
+  getRandomAceQuestions,
+  getRandomMLQuestions,
+  QUIZ_CONFIGS,
+} from "../data/questions";
 import QuizQuestion from "./QuizQuestion";
 import QuizTimer from "./QuizTimer";
 import ProgressBar from "./ProgressBar";
@@ -8,7 +12,7 @@ import { Images } from "../assets";
 import "./Quiz.css";
 
 const Quiz = ({
-  questionsSource = "default",
+  questionsSource = "ace",
   customQuestions = [],
   onBack,
 }) => {
@@ -20,27 +24,41 @@ const Quiz = ({
   const [quizCompleted, setQuizCompleted] = useState(false);
   const [results, setResults] = useState(null);
 
+  const normalizedSource =
+    questionsSource === "pmle" || questionsSource === "ml"
+      ? "pmle"
+      : questionsSource === "custom"
+      ? "custom"
+      : "ace";
+
+  const storageKey = `quizAnswers_${normalizedSource}`;
+  const quizConfig = QUIZ_CONFIGS[normalizedSource] || QUIZ_CONFIGS.ace;
+
   useEffect(() => {
     if (quizStarted && !quizCompleted) {
       // Load answers from localStorage
-      const savedAnswers = localStorage.getItem("quizAnswers");
+      const savedAnswers = localStorage.getItem(storageKey);
       if (savedAnswers) {
-        setAnswers(JSON.parse(savedAnswers));
+        try {
+          setAnswers(JSON.parse(savedAnswers));
+        } catch (e) {
+          console.error("Error loading saved answers:", e);
+        }
       }
     }
-  }, [quizStarted, quizCompleted]);
+  }, [quizStarted, quizCompleted, storageKey]);
 
   useEffect(() => {
     // Save answers to localStorage whenever answers change
     if (quizStarted && !quizCompleted) {
-      localStorage.setItem("quizAnswers", JSON.stringify(answers));
+      localStorage.setItem(storageKey, JSON.stringify(answers));
     }
-  }, [answers, quizStarted, quizCompleted]);
+  }, [answers, quizStarted, quizCompleted, storageKey]);
 
   const startQuiz = () => {
     let quizQuestions;
 
-    if (questionsSource === "custom" && customQuestions.length > 0) {
+    if (normalizedSource === "custom" && customQuestions.length > 0) {
       // Use all custom questions or random subset if more than 50
       if (customQuestions.length <= 50) {
         quizQuestions = customQuestions;
@@ -48,15 +66,17 @@ const Quiz = ({
         const shuffled = [...customQuestions].sort(() => 0.5 - Math.random());
         quizQuestions = shuffled.slice(0, 50);
       }
+    } else if (normalizedSource === "pmle") {
+      quizQuestions = getRandomMLQuestions(50);
     } else {
-      // Use default questions
-      quizQuestions = getRandomQuestions(50);
+      // ACE
+      quizQuestions = getRandomAceQuestions(50);
     }
 
     setQuestions(quizQuestions);
     setQuizStarted(true);
     setAnswers({});
-    localStorage.removeItem("quizAnswers");
+    localStorage.removeItem(storageKey);
   };
 
   const handleAnswer = (questionId, selectedAnswer) => {
@@ -76,14 +96,14 @@ const Quiz = ({
     const calculatedResults = calculateResults();
     setResults(calculatedResults);
     setQuizCompleted(true);
-    localStorage.removeItem("quizAnswers");
+    localStorage.removeItem(storageKey);
   };
 
   const calculateResults = () => {
     let correctCount = 0;
     const answeredQuestions = [];
 
-    questions.forEach((question, index) => {
+    questions.forEach((question) => {
       const userAnswer = answers[question.id];
       const isCorrect = userAnswer === question.correctAnswer;
 
@@ -102,7 +122,7 @@ const Quiz = ({
     });
 
     const percentage = Math.round((correctCount / questions.length) * 100);
-    const passed = percentage >= 70;
+    const passed = percentage >= quizConfig.passingScore;
 
     return {
       correctCount,
@@ -127,43 +147,48 @@ const Quiz = ({
     setQuizStarted(false);
     setQuizCompleted(false);
     setResults(null);
-    localStorage.removeItem("quizAnswers");
+    localStorage.removeItem(storageKey);
   };
 
   if (!quizStarted) {
     const questionCount =
-      questionsSource === "custom" && customQuestions.length > 0
+      normalizedSource === "custom" && customQuestions.length > 0
         ? Math.min(customQuestions.length, 50)
         : 50;
 
     return (
       <div className="quiz-container">
-        <div className="quiz-welcome">
+        <div className={`quiz-welcome ${quizConfig.badgeClass}-theme`}>
           <div className="quiz-branding">
             <img className="quiz-logo" src={Images.logo} alt="Quizzy Spark Logo" />
             <h1 className="quiz-brand-title">Quizzy Spark</h1>
           </div>
-          <h2 className="quiz-title">
-            {questionsSource === "custom" ? "Custom Quiz" : "Google Cloud Associate Quiz"}
-          </h2>
+          <span className={`quiz-welcome-badge ${quizConfig.badgeClass}`}>
+            {quizConfig.badge}
+          </span>
+          <h2 className="quiz-title">{quizConfig.title}</h2>
           <div className="quiz-info">
             <p>This quiz contains {questionCount} multiple-choice questions.</p>
-            <p>You have 60 minutes to complete the quiz.</p>
-            <p>You need to score 70% or above to pass.</p>
+            <p>You have {quizConfig.timeMinutes} minutes to complete the quiz.</p>
+            <p>You need to score {quizConfig.passingScore}% or above to pass.</p>
             <p>Your answers will be saved automatically as you progress.</p>
-            {questionsSource === "custom" && (
+            {normalizedSource === "custom" ? (
               <p className="custom-quiz-note">
-                📁 Using your uploaded custom questions
+                📁 Using your uploaded custom questions ({customQuestions.length} total)
+              </p>
+            ) : (
+              <p className="pool-info-note">
+                🎲 50 questions randomly selected from our verified bank of {quizConfig.totalQuestions} questions.
               </p>
             )}
           </div>
           <div className="quiz-start-actions">
-            <button className="start-button" onClick={startQuiz}>
+            <button className={`start-button ${quizConfig.badgeClass}-btn`} onClick={startQuiz}>
               Start Quiz
             </button>
             {onBack && (
               <button className="back-to-menu-button" onClick={onBack}>
-                ← Back
+                ← Back to Menu
               </button>
             )}
           </div>
@@ -178,7 +203,9 @@ const Quiz = ({
         results={results}
         onRestart={resetQuiz}
         onBack={onBack}
-        isCustomQuiz={questionsSource === "custom"}
+        isCustomQuiz={normalizedSource === "custom"}
+        quizTitle={quizConfig.title}
+        quizShortTitle={quizConfig.shortTitle}
       />
     );
   }
@@ -193,7 +220,10 @@ const Quiz = ({
       <div className="quiz-header">
         <div className="quiz-header-branding">
           <img className="quiz-header-logo" src={Images.logo} alt="Quizzy Spark Logo" />
-          <span className="quiz-header-brand">Quizzy Spark</span>
+          <div className="quiz-header-text">
+            <span className="quiz-header-brand">Quizzy Spark</span>
+            <span className="quiz-header-subtitle">{quizConfig.shortTitle}</span>
+          </div>
         </div>
         <div className="quiz-timer">
           <QuizTimer

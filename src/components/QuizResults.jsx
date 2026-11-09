@@ -2,7 +2,14 @@ import { useState } from "react";
 import { Images } from "../assets";
 import "./QuizResults.css";
 
-const QuizResults = ({ results, onRestart, onBack, isCustomQuiz = false }) => {
+const QuizResults = ({
+  results,
+  onRestart,
+  onBack,
+  isCustomQuiz = false,
+  quizTitle,
+  quizShortTitle,
+}) => {
   const [showDetails, setShowDetails] = useState(false);
 
   const {
@@ -21,6 +28,7 @@ const QuizResults = ({ results, onRestart, onBack, isCustomQuiz = false }) => {
           <span className="results-brand-title">Quizzy Spark</span>
         </div>
         <h1 className="results-title">Quiz Results</h1>
+        {quizTitle && <p className="results-quiz-subtitle">{quizTitle}</p>}
         <div className={`result-status ${passed ? "passed" : "failed"}`}>
           {passed ? "PASSED" : "FAILED"}
         </div>
@@ -53,7 +61,7 @@ const QuizResults = ({ results, onRestart, onBack, isCustomQuiz = false }) => {
           {showDetails ? "Hide" : "Show"} Detailed Results
         </button>
         <button className="restart-button" onClick={onRestart}>
-          {isCustomQuiz ? "Retake Quiz" : "Take Another Quiz"}
+          {isCustomQuiz ? "Retake Quiz" : `Retake ${quizShortTitle || "Quiz"}`}
         </button>
         {onBack && (
           <button className="back-button-results" onClick={onBack}>
@@ -99,21 +107,29 @@ const QuizResults = ({ results, onRestart, onBack, isCustomQuiz = false }) => {
                         </span>
                         <span className="option-text">{option}</span>
                         {optionIndex === item.correctAnswer && (
-                          <span className="answer-indicator correct-indicator">
-                            ✓ Correct
+                          <span className="answer-badge correct">
+                            Correct Answer
                           </span>
                         )}
                         {optionIndex === item.userAnswer &&
                           item.userAnswer !== item.correctAnswer && (
-                            <span className="answer-indicator wrong-indicator">
-                              ✗ Your Answer
+                            <span className="answer-badge wrong">
+                              Your Answer
+                            </span>
+                          )}
+                        {optionIndex === item.userAnswer &&
+                          item.userAnswer === item.correctAnswer && (
+                            <span className="answer-badge user-correct">
+                              Your Answer (Correct)
                             </span>
                           )}
                       </div>
                     ))}
                   </div>
                   {!item.isAnswered && (
-                    <div className="not-answered">Not answered</div>
+                    <div className="unanswered-notice">
+                      ⚠️ You did not answer this question
+                    </div>
                   )}
                 </div>
               </div>

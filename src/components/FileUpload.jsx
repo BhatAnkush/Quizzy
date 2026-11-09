@@ -282,7 +282,7 @@ const FileUpload = ({ onQuestionsUploaded, onBackToDefault }) => {
 
         <div className="upload-actions">
           <button className="back-button" onClick={onBackToDefault}>
-            ← Back to Default Quiz
+            ← Back to Menu
           </button>
         </div>
       </div>

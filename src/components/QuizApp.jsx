@@ -1,15 +1,20 @@
 import { useState } from "react";
 import Quiz from "./Quiz";
 import FileUpload from "./FileUpload";
-import { getRandomQuestions } from "../data/questions";
+import { aceQuestions, mlQuestions } from "../data/questions";
 import "./QuizApp.css";
 import { Images } from "../assets";
+
 const QuizApp = () => {
-  const [currentMode, setCurrentMode] = useState("menu"); // menu, default-quiz, custom-quiz, upload
+  const [currentMode, setCurrentMode] = useState("menu"); // menu, ace-quiz, pmle-quiz, custom-quiz, upload
   const [customQuestions, setCustomQuestions] = useState([]);
 
-  const handleStartDefaultQuiz = () => {
-    setCurrentMode("default-quiz");
+  const handleStartAceQuiz = () => {
+    setCurrentMode("ace-quiz");
+  };
+
+  const handleStartPMLEQuiz = () => {
+    setCurrentMode("pmle-quiz");
   };
 
   const handleStartCustomQuiz = () => {
@@ -39,8 +44,12 @@ const QuizApp = () => {
     );
   }
 
-  if (currentMode === "default-quiz") {
-    return <Quiz questionsSource="default" onBack={handleBackToMenu} />;
+  if (currentMode === "ace-quiz" || currentMode === "default-quiz") {
+    return <Quiz questionsSource="ace" onBack={handleBackToMenu} />;
+  }
+
+  if (currentMode === "pmle-quiz" || currentMode === "ml-quiz") {
+    return <Quiz questionsSource="pmle" onBack={handleBackToMenu} />;
   }
 
   if (currentMode === "custom-quiz") {
@@ -61,38 +70,66 @@ const QuizApp = () => {
           <img className="logo gradient-border" src={Images.logo} alt="Quiz App Logo" />
           <h1 className="app-title">Quizzy Spark</h1>
           <p className="app-subtitle">
-            Test your knowledge with our built-in questions or upload your own
-            custom quiz
+            Prepare for Google Cloud certifications with our comprehensive question banks
+            or upload your own custom quiz.
           </p>
         </div>
 
         <div className="menu-options">
+          {/* Card 1: Associate Cloud Engineer (ACE) */}
           <div className="quiz-option">
-            <div className="option-card default-option">
-              <div className="option-icon">🧠</div>
-              <h2 className="option-title">GCP Quiz</h2>
+            <div className="option-card ace-option">
+              <span className="option-badge ace">Associate Level</span>
+              <div className="option-icon">☁️</div>
+              <h2 className="option-title">ACE Quiz</h2>
               <p className="option-description">
-                Take our comprehensive quiz with 50 questions designed to test your GCP
-                expertise. Perfect for preparing for GCP certifications or just
-                brushing up on your cloud computing knowledge.
+                Prepare for the Google Cloud Associate Cloud Engineer exam. Test your
+                skills on deploying applications, monitoring operations, and managing enterprise cloud infrastructure.
               </p>
               <ul className="option-features">
-                <li>60 pre-made questions</li>
+                <li>{aceQuestions.length} verified practice questions</li>
                 <li>50 random questions per quiz</li>
-                <li>60-minute timer</li>
+                <li>60-minute timed exam</li>
                 <li>70% passing score</li>
               </ul>
               <button
-                className="option-button primary"
-                onClick={handleStartDefaultQuiz}
+                className="option-button ace-btn"
+                onClick={handleStartAceQuiz}
               >
-                Start GCP Quiz
+                Start ACE Quiz
               </button>
             </div>
           </div>
 
+          {/* Card 2: Professional Machine Learning Engineer (PMLE) */}
+          <div className="quiz-option">
+            <div className="option-card pmle-option">
+              <span className="option-badge pmle">Professional Level</span>
+              <div className="option-icon">🤖</div>
+              <h2 className="option-title">PMLE Quiz</h2>
+              <p className="option-description">
+                Prepare for the Google Cloud Professional Machine Learning Engineer exam.
+                Test your expertise on ML architecture, Vertex AI, BigQuery ML, pipelines, and MLOps.
+              </p>
+              <ul className="option-features">
+                <li>{mlQuestions.length} verified practice questions</li>
+                <li>50 random questions per quiz</li>
+                <li>60-minute timed exam</li>
+                <li>70% passing score</li>
+              </ul>
+              <button
+                className="option-button pmle-btn"
+                onClick={handleStartPMLEQuiz}
+              >
+                Start PMLE Quiz
+              </button>
+            </div>
+          </div>
+
+          {/* Card 3: Custom Quiz */}
           <div className="quiz-option">
             <div className="option-card custom-option">
+              <span className="option-badge custom">Custom Exam</span>
               <div className="option-icon">📁</div>
               <h2 className="option-title">Custom Quiz</h2>
               <p className="option-description">
