@@ -16,14 +16,6 @@ const Quiz = ({
   customQuestions = [],
   onBack,
 }) => {
-  const [questions, setQuestions] = useState([]);
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [answers, setAnswers] = useState({});
-  const [timeLeft, setTimeLeft] = useState(3600); // 60 minutes in seconds
-  const [quizStarted, setQuizStarted] = useState(false);
-  const [quizCompleted, setQuizCompleted] = useState(false);
-  const [results, setResults] = useState(null);
-
   const normalizedSource =
     questionsSource === "pmle" || questionsSource === "ml"
       ? "pmle"
@@ -34,19 +26,20 @@ const Quiz = ({
   const storageKey = `quizAnswers_${normalizedSource}`;
   const quizConfig = QUIZ_CONFIGS[normalizedSource] || QUIZ_CONFIGS.ace;
 
-  useEffect(() => {
-    if (quizStarted && !quizCompleted) {
-      // Load answers from localStorage
-      const savedAnswers = localStorage.getItem(storageKey);
-      if (savedAnswers) {
-        try {
-          setAnswers(JSON.parse(savedAnswers));
-        } catch (e) {
-          console.error("Error loading saved answers:", e);
-        }
-      }
+  const [questions, setQuestions] = useState([]);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [answers, setAnswers] = useState(() => {
+    try {
+      const saved = localStorage.getItem(`quizAnswers_${normalizedSource}`);
+      return saved ? JSON.parse(saved) : {};
+    } catch {
+      return {};
     }
-  }, [quizStarted, quizCompleted, storageKey]);
+  });
+  const [timeLeft, setTimeLeft] = useState(3600); // 60 minutes in seconds
+  const [quizStarted, setQuizStarted] = useState(false);
+  const [quizCompleted, setQuizCompleted] = useState(false);
+  const [results, setResults] = useState(null);
 
   useEffect(() => {
     // Save answers to localStorage whenever answers change
